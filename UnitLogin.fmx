@@ -1,0 +1,328 @@
+object FrmLogin: TFrmLogin
+  Left = 0
+  Top = 0
+  BorderStyle = None
+  Caption = 'Acesso'
+  ClientHeight = 630
+  ClientWidth = 368
+  Fill.Color = xFFF2F4FC
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  FullScreen = True
+  OnCreate = FormCreate
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 3
+  object Rectangle1: TRectangle
+    Align = Top
+    Fill.Color = claWhite
+    Sides = []
+    Size.Width = 368.000000000000000000
+    Size.Height = 49.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = xFFE2E2E2
+    object lbl_titulo: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Locked = True
+      Size.Width = 368.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 24.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = xFFB0BAC9
+      TextSettings.HorzAlign = Center
+      Text = 'Acesso'
+      ParentShowHint = False
+      ShowHint = False
+      TabOrder = 0
+    end
+    object btnVoltar: TButton
+      Align = FitLeft
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+      TabOrder = 1
+      Text = 'btnVoltar'
+      TextSettings.Trimming = None
+      OnClick = btnVoltarClick
+    end
+  end
+  object TabControl: TTabControl
+    Align = Client
+    Size.Width = 368.000000000000000000
+    Size.Height = 581.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'TabControlStyle1'
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    OnChange = TabControlChange
+    Sizes = (
+      368s
+      581s
+      368s
+      581s)
+    object TabLogin: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabLogin'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout1: TLayout
+        Align = Center
+        Margins.Bottom = 100.000000000000000000
+        Size.Width = 271.000000000000000000
+        Size.Height = 267.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object rect_login: TRectangle
+          Align = Top
+          Fill.Color = xFF4A70F7
+          Margins.Top = 20.000000000000000000
+          Position.Y = 72.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 4.000000000000000000
+          YRadius = 4.000000000000000000
+          OnClick = rect_loginClick
+          object Label3: TLabel
+            Align = Center
+            StyledSettings = [Family]
+            Locked = True
+            Size.Width = 271.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            Text = 'Acessar'
+            TabOrder = 0
+          end
+        end
+        object laBtnConfiguracao: TLayout
+          Align = Bottom
+          HitTest = True
+          Position.Y = 160.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 107.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          OnClick = laBtnConfiguracaoClick
+          object Image3: TImage
+            MultiResBitmap.Height = 72
+            MultiResBitmap.Width = 72
+            MultiResBitmap = <
+              item
+                Width = 72
+                Height = 72
+                PNG = {
+                  89504E470D0A1A0A0000000D494844520000004800000048080600000055EDB3
+                  470000000473424954080808087C0864880000033E49444154789CED9A216C53
+                  4118C7BF7B6B9666A99CA8DB64C5E41210330401096262023931819C44201088
+                  C9090C091281C19089898580838411048225089A204632129A2C1DAFEB7DF747
+                  F4BDA56BF7F6AE7DDF71477ABF64A249F7DDFFFFDBBDB5BD57A24824E2102531
+                  04409D885688E806112D1A631689A841449D24497E11519B883E29A58E24D6FB
+                  2F00D000B0698C79DB6EB7FBB0A0D7EB1D33F30B00B77DE7770E33EFD84829A2
+                  DFEF7F05B0E5BB87539879B78A2400D05ABF07B0EABB8B3324246597E803DF5D
+                  9C21210900B23935DF7D9C2028E9B9EF2ECE909204E091EF2ECE109474CF7717
+                  674848EAF7FB3F00347C7771868424667EEABBC718003600B424665595D4E974
+                  FE00684A6411436BFDB1D7EB1D872289999F48E41001C06A1E2C93B42631B78A
+                  A4344D4F24328800E0F170B86EB77B1A8224003725324C4332FC6034C8C2C242
+                  E3ECEC6C5F42529224ED0ABF7EA7EAFA22A469FAFBAA3F5FD59D0460BBC2EE81
+                  31664FB2E7B4251AD7859C56525539C0E068C445E7498B2C9705CD24591F7649
+                  C801062FF72EBBDB9669D984CD8E26362CE689C8C9F9170ECA0A95EE205B49D2
+                  724211549B247091241772BADDEEA90F276314BD8AD94A7221070098F9B34F2F
+                  171863F6270D9F4B82233900C0CC2F7D39B974BCA9947A4744772719B0B4B454
+                  23A2578299C64892E483CBF9D7AE3DF2F88D9714E5BCF6B5F025414AA943663E
+                  F415E62AB4D6474AA9B6AFF5477710CDCDCD3DF311A4885AADD602B0ED3BC705
+                  00EAD9716768042569DDB78D02C291648CD9F36DA380302401686AADBFFBB651
+                  4030925AD927F8100946D25A9454028056BCDC4A00D08CFFB82D00B091DD120A
+                  8DA024D5016C31F397699A64774C5D108EA41C002B001E1A630E8ADE816BADBF
+                  6597E7360627972D87BB303C49C360B0BB96877EEA05CF9B5D49B64449164449
+                  1644491644491644491644491644491644491644491644491644491644491644
+                  49164449163896B4E9BB9F08AE248D7E596BECCB0BFF0B4AA9A3F9F9F95BE7E7
+                  E73F25E7024825E779C7C14EBAEFBB933852929879C77717675495C4CCBBBE3B
+                  38675A49332127675249332527C756D24CCAC9299334D372728A244539430068
+                  32F34E9AA627C6980300EBBE334522910BFE02FDF7F85D00C92DA90000000049
+                  454E44AE426082}
+                FileName = 'C:\temp\Logos\baseline_build_white_48.png'
+              end>
+            Align = Client
+            HitTest = False
+            MarginWrapMode = Original
+            Size.Width = 271.000000000000000000
+            Size.Height = 74.000000000000000000
+            Size.PlatformDefault = False
+            object ShadowEffect4: TShadowEffect
+              Distance = 3.000000000000000000
+              Direction = 45.000000000000000000
+              Softness = 0.600000023841857900
+              Opacity = 0.600000023841857900
+              ShadowColor = claDarkblue
+            end
+          end
+          object Label32: TLabel
+            Align = Bottom
+            StyledSettings = [Family]
+            Margins.Left = 10.000000000000000000
+            Margins.Top = 5.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 5.000000000000000000
+            Position.X = 10.000000000000000000
+            Position.Y = 79.000000000000000000
+            Size.Width = 251.000000000000000000
+            Size.Height = 23.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            TextSettings.FontColor = xFFB0BAC9
+            TextSettings.HorzAlign = Center
+            Text = 'Configura'#231#227'o'
+            TabOrder = 1
+          end
+          object FloatAnimation4: TFloatAnimation
+            Duration = 0.200000002980232200
+            Interpolation = Exponential
+            PropertyName = 'Size.Height'
+            StartValue = 110.000000000000000000
+            StopValue = 130.000000000000000000
+            Trigger = 'IsMouseOver=true'
+            TriggerInverse = 'IsMouseOver=false'
+          end
+        end
+        object edt_usuario: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          StyleLookup = 'editstyle'
+          TabOrder = 0
+          Position.X = 5.000000000000000000
+          Position.Y = 20.000000000000000000
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 20.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Size.Width = 261.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Atendente'
+          StyledSettings = [Family, Size, Style]
+          Caret.Color = claWhite
+        end
+      end
+    end
+    object TabConfig: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'TabConfig'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout2: TLayout
+        Align = Center
+        Margins.Bottom = 100.000000000000000000
+        Size.Width = 271.000000000000000000
+        Size.Height = 217.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label4: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Margins.Left = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Size.Width = 266.000000000000000000
+          Size.Height = 30.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 18.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFFB0BAC9
+          Text = 'Servidor'
+          TabOrder = 0
+        end
+        object edt_servidor: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 2
+          Position.Y = 30.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size, Style]
+          object lblPorta: TLabel
+            Align = Top
+            StyledSettings = [Family]
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 30.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 30.000000000000000000
+            Size.Width = 266.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 18.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+            TextSettings.FontColor = xFFB0BAC9
+            Text = 'Porta'
+            TabOrder = 0
+          end
+        end
+        object rect_save_config: TRectangle
+          Align = Top
+          Fill.Color = xFF4A70F7
+          Margins.Top = 20.000000000000000000
+          Position.Y = 139.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 4.000000000000000000
+          YRadius = 4.000000000000000000
+          OnClick = rect_save_configClick
+          object Label5: TLabel
+            Align = Center
+            StyledSettings = [Family]
+            Locked = True
+            Size.Width = 271.000000000000000000
+            Size.Height = 30.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.Size = 16.000000000000000000
+            TextSettings.FontColor = claWhite
+            TextSettings.HorzAlign = Center
+            Text = 'Salvar'
+            TabOrder = 0
+          end
+        end
+        object edt_port: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 1
+          Position.Y = 87.000000000000000000
+          Margins.Top = 25.000000000000000000
+          Size.Width = 271.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          StyledSettings = [Family, Size, Style]
+        end
+      end
+    end
+  end
+end

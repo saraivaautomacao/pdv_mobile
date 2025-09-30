@@ -1,0 +1,54 @@
+inherited FrmLogin_LgXhdpiTb: TFrmLogin_LgXhdpiTb
+  ClientHeight = 854
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited Rectangle1: TRectangle
+    Size.Width = 480.000000000000000000
+    inherited lbl_titulo: TLabel
+      Size.Width = 480.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+    end
+    inherited btnVoltar: TButton
+      Size.Width = 49.000000000000000000
+      Size.Height = 49.000000000000000000
+    end
+  end
+  inherited TabControl: TTabControl
+    Size.Width = 480.000000000000000000
+    Size.Height = 805.000000000000000000
+    Sizes = (
+      480s
+      805s
+      480s
+      805s)
+    inherited TabLogin: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Layout1: TLayout
+        inherited laBtnConfiguracao: TLayout
+          inherited Image3: TImage
+            MultiResBitmap.Height = 72
+            MultiResBitmap.Width = 72
+          end
+          inherited Label32: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+    inherited TabConfig: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Layout2: TLayout
+        inherited Label4: TLabel
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+        end
+        inherited edt_servidor: TEdit
+          inherited lblPorta: TLabel
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+        end
+      end
+    end
+  end
+end

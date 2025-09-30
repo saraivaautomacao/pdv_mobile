@@ -1,0 +1,152 @@
+inherited frmProdutos_SmXhdpiPh: TfrmProdutos_SmXhdpiPh
+  ClientHeight = 375
+  ClientWidth = 250
+  DesignerMasterStyle = 3
+  inherited Layout1: TLayout
+    Size.Width = 250.000000000000000000
+    Size.Height = 375.000000000000000000
+    inherited TabControl1: TTabControl
+      Size.Width = 250.000000000000000000
+      Size.Height = 375.000000000000000000
+      Sizes = (
+        250s
+        375s
+        250s
+        375s)
+      inherited tabPedido: TTabItem
+        ExplicitSize.cx = 100.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        inherited rectHeader: TRectangle
+          Size.Width = 250.000000000000000000
+          inherited lblComanda: TLabel
+            Size.Width = 250.000000000000000000
+            TextSettings.Font.StyleExt = {00060000000000000004000000}
+          end
+          inherited img_voltar: TImage
+            MultiResBitmap.Height = 32
+            MultiResBitmap.Width = 32
+          end
+          inherited Image1: TImage
+            MultiResBitmap.Height = 128
+            MultiResBitmap.Width = 128
+            Position.X = 141.000000000000000000
+            inherited lblQuant: TLabel
+              TextSettings.Font.StyleExt = {00060000000000000004000000}
+            end
+          end
+        end
+        inherited layTabProdutos: TLayout
+          Size.Width = 250.000000000000000000
+          Size.Height = 286.000000000000000000
+          inherited lstVProdutos: TListView
+            Size.Width = 250.000000000000000000
+            Size.Height = 286.000000000000000000
+          end
+          inherited rectTabelaPreco: TRectangle
+            Size.Width = 230.000000000000000000
+            Size.Height = 266.000000000000000000
+            inherited lstbxTabPrecos: TListBox
+              Size.Width = 230.000000000000000000
+              Viewport.Width = 230.000000000000000000
+              Viewport.Height = 232.000000000000000000
+              inherited lstbxPreco1: TListBoxItem
+                inherited rbtPreco1: TRadioButton
+                  Size.Width = 220.000000000000000000
+                  TabOrder = 38
+                end
+              end
+              inherited lstbxPreco2: TListBoxItem
+                inherited rbtpreco2: TRadioButton
+                  Size.Width = 220.000000000000000000
+                  TabOrder = 38
+                end
+              end
+              inherited lstbxpreco3: TListBoxItem
+                inherited rbtpreco3: TRadioButton
+                  Size.Width = 220.000000000000000000
+                  TabOrder = 38
+                end
+              end
+              inherited lstbxpreco4: TListBoxItem
+                inherited rbtpreco4: TRadioButton
+                  Size.Width = 220.000000000000000000
+                  TabOrder = 38
+                end
+              end
+              inherited lstbxObservacao: TListBoxItem
+                Size.Width = 230.000000000000000000
+                inherited Edit1: TEdit
+                  Size.Width = 230.000000000000000000
+                end
+              end
+            end
+            inherited lblTabPrecos: TLabel
+              Size.Width = 230.000000000000000000
+            end
+          end
+        end
+        inherited layPesqProd: TLayout
+          Size.Width = 250.000000000000000000
+          inherited edt_busca_produto: TEdit
+            Size.Width = 174.000000000000000000
+          end
+          inherited img_busca_produto: TImage
+            MultiResBitmap.Height = 48
+            MultiResBitmap.Width = 48
+            MultiResBitmap = <
+              item
+                Width = 48
+                Height = 48
+                PNG = {
+                  89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                  87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  0446494441546843ED975D685C5510C7E79C7B93F4234991428922044D614B15
+                  7CF46BB721168BD50D0A1245D4578B3E8AA848BADB4DA8A2AD0FD5A7BCD682D8
+                  BC88D9AA1024D80451F045052105C182D256AAC1D8369BEEDD33CE9C3BD9444C
+                  9A73EE5D7585FB83B033B39BDDFBBFF79C39FF818C8C8C8C8C8CFF334A5E1333
+                  32723AA8EDB9F901007C1494BAE7FA320CD47E8C7A7BFBC2EBA61B2EEAC07CA7
+                  407F16A9E8838F2B4317E5DF5A460A01A88AA5D9674C034A41A0764B7163CE43
+                  64FAE11444C1E899D7EFFB59AAA94924E0E1F24C5F80E1290AF7C715771AD7E0
+                  8ADE862F54C7F6BD27A55468797566B8FCC5EE00F59714AEB9F8DA02229E0084
+                  03500FFB1655D4816AEB76307027A27A1ED0CCC90721D806DD0AD4C9E1D26C85
+                  9FA29413E3F505F19DE78BD7FD71651E0173C7554D8D7F742CFF475C5B9FE2E1
+                  B383A8CC8486202725E6A5A9B1C2DB1227C24300AAE1D2DC3405F6CE2FC3D5A5
+                  4EDCFE7875BCF009E72E8C9467BA6BA84FD30D38C8F9E27C647AF68483D54AA1
+                  F9847C7116502C9D7D961F7D9CCDD38AC93DE273F12B0C9667B6F41A3D0D4AE7
+                  393706BEBF1244777D5E198AEC073C71DA03DC2AB9DB484A0F23773CC9C53374
+                  A1B5BA364FF166E65C6BD8DB8D1D4FDA3713E02480FBFC6AABAC2DF09A8FE364
+                  7C5A19FA496FC56392D2459843127AE3D885E8901210BB4E6EB6615DA04635F1
+                  0375D5383B977FECD5AF76C6B11F6E02E8849588368D3A23612AA6DEB8F7D2ED
+                  005FC7594ED5BBEA77C7B11F4E02D81E48081085DF4AD402CC37128046B3FA1B
+                  1EB8ED01F23612C26267ED57095B80BE2C012D4DB543422F9C04B03193107AA0
+                  A753C2F4D086928856E9CA7EF0C34900BB4A094135966E9330354A216D03C198
+                  0B1279E124802DB184741EAB8284A9B0674BDDDC2F2935076CEE071F9C04B09F
+                  9790E2C6D312A66269EF2DFB7547B8CB2675B8DC35FF4BA2E6E024808711F6F3
+                  36210BC0C6CCC689A1E788665412C010DE9F9C7CE29FDB033C49D961446057C9
+                  C64C526F8AA5B9E7E84ED8A5C8875968D409FB46029C045868926AFA17B2C4EC
+                  2AD998D9F73C2896E70E002CBC2B290C20BCF3E1D13CE94886B3001E03799292
+                  94D007D9553E549EB9550A9B6047D04380BF5515DCD42145AAC2928489F09E88
+                  E2496AD599DA11918C197B1BB607526EC2DD86376CBCE637E8600895A9F1C211
+                  C9BC4830D2D9C1E6451A46DEEACD85CD27C86B39F6366C0FE884A5438AFB3CB7
+                  CA66B7B9110945241010532CCFE6B10113ECE7A5B4292C92D73C2F1BFAE1D7A4
+                  BC4A0211890530B489431E46623F7F8E26ACDCFADF477D9E5B25779B950D3B7C
+                  78F608FD7AD9BEBF164F11A904AC85FD3C5B6276956CCCACB7217BC0272C1F52
+                  EBF5F95688689980A4A415F19F0B60D288680B01CC46221070B43AB6EFA8A47F
+                  A36D0430EB89E0CE75C7726DE7E49B0FFE2EA5BFE06E25FE05EC72A16523A965
+                  E03C556E405B096058042F1BBEF3EC80B11F5FDEE8EEB73523AF4CEFE03F4933
+                  323232DA12803F01D8FDAD5A120E2B620000000049454E44AE426082}
+                FileName = 
+                  'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+                  'ipal - Tabs\FontesDelphi\Images\icon-busca.png'
+              end>
+            Position.X = 190.000000000000000000
+          end
+        end
+      end
+      inherited tabFinalizar: TTabItem
+        ExplicitSize.cx = 100.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+      end
+    end
+  end
+end

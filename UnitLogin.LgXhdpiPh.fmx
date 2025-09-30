@@ -1,0 +1,38 @@
+inherited FrmLogin_LgXhdpiPh: TFrmLogin_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Rectangle1: TRectangle
+    Size.Width = 450.000000000000000000
+    inherited lbl_titulo: TLabel
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+    end
+  end
+  inherited TabControl: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 645.000000000000000000
+    Sizes = (
+      450s
+      645s
+      450s
+      645s)
+    inherited TabLogin: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Layout1: TLayout
+        inherited Label2: TLabel
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+        end
+      end
+    end
+    inherited TabConfig: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited Layout2: TLayout
+        inherited Label4: TLabel
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+        end
+      end
+    end
+  end
+end

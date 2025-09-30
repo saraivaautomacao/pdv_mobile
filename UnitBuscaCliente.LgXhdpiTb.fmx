@@ -1,0 +1,38 @@
+inherited FrmBuscaCliente_LgXhdpiTb: TFrmBuscaCliente_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 0
+  inherited rectToolbar: TRectangle
+    Size.Width = 480.000000000000000000
+    inherited Label2: TLabel
+      Size.Width = 480.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      inherited img_voltar: TImage
+        MultiResBitmap.Height = 32
+        MultiResBitmap.Width = 32
+      end
+    end
+  end
+  inherited lvCliente: TListView
+    Size.Width = 480.000000000000000000
+    Size.Height = 779.000000000000000000
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'txtCliente'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Font.Size = 14.000000000000000000
+        Appearance.TextAlign = Leading
+        Appearance.TextColor = xFFA3A3A3
+        Appearance.Width = 440.000000000000000000
+        Appearance.Height = 22.000000000000000000
+        Appearance.PlaceOffset.X = 9.000000000000000000
+        Appearance.PlaceOffset.Y = 13.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Accessory3'
+        AppearanceClassName = 'TAccessoryObjectAppearance'
+        Appearance.Width = 25.000000000000000000
+        Appearance.Align = Trailing
+      end>
+  end
+end

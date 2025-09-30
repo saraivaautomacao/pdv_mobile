@@ -1,0 +1,118 @@
+object FrmBuscaCliente: TFrmBuscaCliente
+  Left = 0
+  Top = 0
+  Caption = 'Pequisar Clientes'
+  ClientHeight = 636
+  ClientWidth = 358
+  Fill.Kind = Solid
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnClose = FormClose
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object rectToolbar: TRectangle
+    Align = Top
+    Fill.Color = xFF1071C3
+    Size.Width = 358.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Label2: TLabel
+      Align = Contents
+      StyledSettings = [Family]
+      Size.Width = 358.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00060000000000000004000000}
+      TextSettings.FontColor = claWhite
+      TextSettings.HorzAlign = Center
+      Text = 'Pesquisar Clientes'
+      TabOrder = 0
+      object img_voltar: TImage
+        MultiResBitmap.Height = 32
+        MultiResBitmap.Width = 32
+        MultiResBitmap = <
+          item
+            Width = 32
+            Height = 32
+            PNG = {
+              89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+              F40000000473424954080808087C0864880000009D494441545885ED96B10D02
+              310C456DC40227310D0350DF044C42454973EB300F25CAF5699C4773874E9428
+              7110F21BC0FF7D27854582E09F0006E0029C7B841FCC6C0228A5DCBDC307339B
+              524A39E7FC048E9EE1EFE64BF8E819FED9FCE4191ECDA3B95F73111133BBB568
+              BEAB35A839DD9F6091E8F7093712B189552236B14AFCE426FC0E928DC45727D9
+              BE9680AA26E02A22B3AA3E6ACD0D82E6BC00DF1E53B41E554335000000004945
+              4E44AE426082}
+            FileName = 
+              'D:\99Coders\Mobile 360\Curso 2.0\03 - App mobile\05 - Tela princ' +
+              'ipal - Tabs\FontesDelphi\Images\icon-voltar.png'
+          end>
+        Align = Left
+        DisableInterpolation = True
+        Margins.Left = 5.000000000000000000
+        Position.X = 5.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        WrapMode = Center
+        OnClick = img_voltarClick
+      end
+    end
+  end
+  object lvCliente: TListView
+    ItemAppearanceClassName = 'TDynamicAppearance'
+    ItemEditAppearanceClassName = 'TDynamicAppearance'
+    HeaderAppearanceClassName = 'TListHeaderObjects'
+    FooterAppearanceClassName = 'TListHeaderObjects'
+    ItemSpaces.Left = 0.000000000000000000
+    ItemSpaces.Right = 0.000000000000000000
+    Align = Client
+    Size.Width = 358.000000000000000000
+    Size.Height = 586.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    ItemAppearance.ItemHeight = 50
+    ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'txtCliente'
+        AppearanceClassName = 'TTextObjectAppearance'
+        Appearance.Font.Size = 14.000000000000000000
+        Appearance.TextAlign = Leading
+        Appearance.TextColor = xFFA3A3A3
+        Appearance.Width = 302.000000000000000000
+        Appearance.Height = 22.000000000000000000
+        Appearance.PlaceOffset.X = 9.000000000000000000
+        Appearance.PlaceOffset.Y = 13.000000000000000000
+      end
+      item
+        AppearanceObjectName = 'Accessory3'
+        AppearanceClassName = 'TAccessoryObjectAppearance'
+        Appearance.Width = 25.000000000000000000
+        Appearance.Align = Trailing
+      end>
+    ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+      item
+        AppearanceObjectName = 'Text1'
+        AppearanceClassName = 'TTextObjectAppearance'
+      end>
+    CanSwipeDelete = False
+    OnItemClick = lvClienteItemClick
+    ShowSelection = False
+    SearchVisible = True
+  end
+  object BindSourceDB1: TBindSourceDB
+    ScopeMappings = <>
+    Left = 192
+    Top = 272
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 324
+    Top = 65533
+  end
+end

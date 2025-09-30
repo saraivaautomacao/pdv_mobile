@@ -1,0 +1,121 @@
+inherited frmProdutos_LgXhdpiPh: TfrmProdutos_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited tabPrincipal: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 646.000000000000000000
+    Sizes = (
+      450s
+      646s
+      450s
+      646s)
+    inherited tabPedido: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited lstVProdutos: TListView
+        Size.Width = 450.000000000000000000
+        Size.Height = 646.000000000000000000
+        inherited rectTabelaPreco: TRectangle
+          inherited lstbxTabPrecos: TListBox
+            Viewport.Width = 268.000000000000000000
+            Viewport.Height = 259.000000000000000000
+            inherited lstbxDescItem: TListBoxItem
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+        inherited layTabProdutos: TLayout
+          Size.Width = 450.000000000000000000
+          Size.Height = 614.000000000000000000
+        end
+        inherited recPeso: TRectangle
+          inherited lstbxPeso: TListBox
+            Viewport.Width = 315.000000000000000000
+            Viewport.Height = 131.000000000000000000
+            inherited ListBoxItem1: TListBoxItem
+              TextSettings.Font.StyleExt = {00070000000000000004000000}
+            end
+          end
+        end
+      end
+      inherited rectObs1: TRectangle
+        Size.Width = 450.000000000000000000
+        Size.Height = 646.000000000000000000
+        inherited rectObs: TRectangle
+          inherited lblDescricao: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
+    end
+    inherited tabFinalizar: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited lstvPedido: TListView
+        Size.Width = 430.000000000000000000
+      end
+      inherited ToolBar1: TToolBar
+        Position.Y = 598.000000000000000000
+        Size.Width = 450.000000000000000000
+      end
+      inherited lblTotal: TLabel
+        Margins.Top = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.Y = 567.000000000000000000
+        Size.Width = 410.000000000000000000
+        TextSettings.Font.StyleExt = {00070000000000000004000000}
+      end
+      inherited rectCliente: TRectangle
+        Size.Width = 430.000000000000000000
+        inherited Label3: TLabel
+          Margins.Top = 5.000000000000000000
+          Position.Y = 5.000000000000000000
+          Size.Width = 382.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lblCliente: TLabel
+          Size.Width = 382.000000000000000000
+          Size.Height = 43.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+        end
+        inherited Image2: TImage
+          MultiResBitmap.Height = 128
+          MultiResBitmap.Width = 128
+          Position.X = 402.000000000000000000
+        end
+      end
+      inherited cbxFormaPgto: TComboBox
+        Size.Width = 390.000000000000000000
+      end
+      inherited Label5: TLabel
+        Margins.Top = 30.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.Y = 515.000000000000000000
+        Size.Width = 450.000000000000000000
+      end
+      inherited Label4: TLabel
+        Size.Width = 450.000000000000000000
+      end
+    end
+  end
+  inherited rectHeader: TRectangle
+    Size.Width = 450.000000000000000000
+    inherited img_voltar: TImage
+      MultiResBitmap.Height = 32
+      MultiResBitmap.Width = 32
+    end
+    inherited Image1: TImage
+      MultiResBitmap.Height = 128
+      MultiResBitmap.Width = 128
+      Position.X = 326.000000000000000000
+      inherited lblQuant: TLabel
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+      end
+    end
+    inherited imgCarga: TImage
+      MultiResBitmap.Height = 64
+      MultiResBitmap.Width = 64
+    end
+  end
+end
