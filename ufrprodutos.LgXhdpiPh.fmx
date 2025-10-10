@@ -16,6 +16,51 @@ inherited frmProdutos_LgXhdpiPh: TfrmProdutos_LgXhdpiPh
       inherited lstVProdutos: TListView
         Size.Width = 450.000000000000000000
         Size.Height = 646.000000000000000000
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 367.000000000000000000
+            Appearance.Height = 26.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text2'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 11.000000000000000000
+            Appearance.TextAlign = Leading
+            Appearance.Width = 121.000000000000000000
+            Appearance.Height = 19.000000000000000000
+            Appearance.PlaceOffset.X = 6.000000000000000000
+            Appearance.PlaceOffset.Y = 27.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text4'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Font.Size = 11.000000000000000000
+            Appearance.TextAlign = Trailing
+            Appearance.Width = 118.000000000000000000
+            Appearance.Height = 20.000000000000000000
+            Appearance.Align = Trailing
+            Appearance.PlaceOffset.X = -82.000000000000000000
+            Appearance.PlaceOffset.Y = 26.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TextButton3'
+            AppearanceClassName = 'TTextButtonObjectAppearance'
+            Appearance.Font.Size = 16.000000000000000000
+            Appearance.Font.StyleExt = {00070000000000000004000000}
+            Appearance.WordWrap = True
+            Appearance.TintColor = claWhite
+            Appearance.Width = 50.000000000000000000
+            Appearance.Height = 48.000000000000000000
+            Appearance.Align = Trailing
+            Appearance.VertAlign = Center
+            Appearance.PlaceOffset.X = -7.000000000000000000
+            Appearance.PlaceOffset.Y = 1.000000000000000000
+            Appearance.Text = '+'
+          end>
         inherited rectTabelaPreco: TRectangle
           inherited lstbxTabPrecos: TListBox
             Viewport.Width = 268.000000000000000000
@@ -40,8 +85,6 @@ inherited frmProdutos_LgXhdpiPh: TfrmProdutos_LgXhdpiPh
         end
       end
       inherited rectObs1: TRectangle
-        Size.Width = 450.000000000000000000
-        Size.Height = 646.000000000000000000
         inherited rectObs: TRectangle
           inherited lblDescricao: TLabel
             TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -54,29 +97,68 @@ inherited frmProdutos_LgXhdpiPh: TfrmProdutos_LgXhdpiPh
       ExplicitSize.cy = 8.000000000000000000
       inherited lstvPedido: TListView
         Size.Width = 430.000000000000000000
+        ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+          item
+            AppearanceObjectName = 'Text1'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 71.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 30.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text2'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Leading
+            Appearance.Width = 367.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 8.000000000000000000
+            Appearance.PlaceOffset.Y = 6.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text3'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.TextAlign = Trailing
+            Appearance.Width = 113.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 206.000000000000000000
+            Appearance.PlaceOffset.Y = 33.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'TextButton4'
+            AppearanceClassName = 'TTextButtonObjectAppearance'
+            Appearance.TextColor = claBlack
+            Appearance.TintColor = claTeal
+            Appearance.TextShadowColor = claSpringgreen
+            Appearance.Width = 49.000000000000000000
+            Appearance.Height = 36.000000000000000000
+            Appearance.Visible = False
+            Appearance.PlaceOffset.X = 286.000000000000000000
+            Appearance.PlaceOffset.Y = 13.000000000000000000
+          end
+          item
+            AppearanceObjectName = 'Text5'
+            AppearanceClassName = 'TTextObjectAppearance'
+            Appearance.Width = 103.000000000000000000
+            Appearance.Height = 25.000000000000000000
+            Appearance.PlaceOffset.X = 88.000000000000000000
+            Appearance.PlaceOffset.Y = 32.000000000000000000
+          end>
       end
       inherited ToolBar1: TToolBar
         Position.Y = 598.000000000000000000
         Size.Width = 450.000000000000000000
       end
-      inherited lblTotal: TLabel
-        Margins.Top = 10.000000000000000000
-        Margins.Bottom = 10.000000000000000000
-        Position.Y = 567.000000000000000000
-        Size.Width = 410.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-      end
       inherited rectCliente: TRectangle
+        Position.Y = 289.000000000000000000
         Size.Width = 430.000000000000000000
         inherited Label3: TLabel
-          Margins.Top = 5.000000000000000000
-          Position.Y = 5.000000000000000000
           Size.Width = 382.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
         inherited lblCliente: TLabel
           Size.Width = 382.000000000000000000
-          Size.Height = 43.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
         end
         inherited Image2: TImage
@@ -85,17 +167,21 @@ inherited frmProdutos_LgXhdpiPh: TfrmProdutos_LgXhdpiPh
           Position.X = 402.000000000000000000
         end
       end
-      inherited cbxFormaPgto: TComboBox
-        Size.Width = 390.000000000000000000
-      end
-      inherited Label5: TLabel
-        Margins.Top = 30.000000000000000000
-        Margins.Bottom = 10.000000000000000000
-        Position.Y = 515.000000000000000000
+      inherited recTotalReceber: TRectangle
         Size.Width = 450.000000000000000000
+        Size.Height = 149.000000000000000000
+        inherited lblTotal: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
       end
-      inherited Label4: TLabel
-        Size.Width = 450.000000000000000000
+      inherited Rectangle1: TRectangle
+        Position.Y = 374.000000000000000000
+        Size.Width = 410.000000000000000000
+        inherited Image3: TImage
+          MultiResBitmap.Height = 128
+          MultiResBitmap.Width = 128
+          Position.X = 375.000000000000000000
+        end
       end
     end
   end

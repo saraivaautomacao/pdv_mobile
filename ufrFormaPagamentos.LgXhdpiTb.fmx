@@ -1,0 +1,27 @@
+inherited frmFormaPagamento_LgXhdpiTb: TfrmFormaPagamento_LgXhdpiTb
+  ClientHeight = 829
+  ClientWidth = 480
+  DesignerMasterStyle = 3
+  inherited Layout1: TLayout
+    Size.Width = 480.000000000000000000
+    Size.Height = 829.000000000000000000
+    inherited recFormaPgto: TRectangle
+      Size.Width = 470.000000000000000000
+    end
+    inherited ListView1: TListView
+      Size.Width = 480.000000000000000000
+      Size.Height = 563.000000000000000000
+    end
+    inherited Rectangle1: TRectangle
+      Position.Y = 692.000000000000000000
+      Size.Width = 480.000000000000000000
+    end
+    inherited rectHeader: TRectangle
+      Size.Width = 480.000000000000000000
+      inherited img_voltar: TImage
+        MultiResBitmap.Height = 32
+        MultiResBitmap.Width = 32
+      end
+    end
+  end
+end

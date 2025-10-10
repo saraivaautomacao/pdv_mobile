@@ -36,6 +36,16 @@ type
     dtsLinkPedido: TDataSource;
     memPedidoSomaTotal: TAggregateField;
     memPedidolkprod: TStringField;
+    fdPagamentos: TFDMemTable;
+    fdPagamentosid: TIntegerField;
+    fdPagamentosdescricao: TStringField;
+    fdPagamentosvalor: TBCDField;
+    fdPagamentosparcelar: TStringField;
+    qryFin: TFDQuery;
+    qryFinid: TIntegerField;
+    qryFinfinalizadora: TStringField;
+    qryFinparcelar: TStringField;
+    qryFinvalor: TCurrencyField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }

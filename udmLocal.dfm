@@ -4,7 +4,7 @@ object dmLocal: TdmLocal
   Width = 351
   object conLocal: TFDConnection
     Params.Strings = (
-      'Database=C:\FontesXE11\distribuidora\mobile\Banco\distdb.db'
+      'Database=C:\fontes12X\pdv_mobile\Banco\distdb.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
     ConnectedStoredUsage = []
@@ -2289,7 +2289,58 @@ object dmLocal: TdmLocal
   end
   object dtsLinkPedido: TDataSource
     DataSet = memPedido
-    Left = 200
-    Top = 96
+    Left = 240
+    Top = 88
+  end
+  object fdPagamentos: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 88
+    Top = 160
+    object fdPagamentosid: TIntegerField
+      FieldName = 'id'
+    end
+    object fdPagamentosdescricao: TStringField
+      FieldName = 'descricao'
+      Size = 30
+    end
+    object fdPagamentosvalor: TBCDField
+      FieldName = 'valor'
+    end
+    object fdPagamentosparcelar: TStringField
+      FieldName = 'parcelar'
+      Size = 1
+    end
+  end
+  object qryFin: TFDQuery
+    Connection = conLocal
+    SQL.Strings = (
+      '     select * from finalizadora')
+    Left = 248
+    Top = 160
+    object qryFinid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object qryFinfinalizadora: TStringField
+      FieldName = 'finalizadora'
+      Origin = 'finalizadora'
+      Size = 30
+    end
+    object qryFinparcelar: TStringField
+      FieldName = 'parcelar'
+      Origin = 'parcelar'
+      FixedChar = True
+      Size = 1
+    end
+    object qryFinvalor: TCurrencyField
+      FieldName = 'valor'
+      Origin = 'valor'
+    end
   end
 end

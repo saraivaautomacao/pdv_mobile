@@ -2,8 +2,8 @@ object frmProdutos: TfrmProdutos
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 653
-  ClientWidth = 359
+  ClientHeight = 708
+  ClientWidth = 373
   Fill.Color = claSnow
   Fill.Kind = Solid
   StyleBook = StyleBook1
@@ -18,8 +18,8 @@ object frmProdutos: TfrmProdutos
   object tabPrincipal: TTabControl
     Align = Client
     HitTest = False
-    Size.Width = 359.000000000000000000
-    Size.Height = 604.000000000000000000
+    Size.Width = 373.000000000000000000
+    Size.Height = 659.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'tabcontrolstyle'
     TabHeight = 49.000000000000000000
@@ -27,10 +27,10 @@ object frmProdutos: TfrmProdutos
     TabOrder = 0
     TabPosition = None
     Sizes = (
-      359s
-      604s
-      359s
-      604s)
+      373s
+      659s
+      373s
+      659s)
     object tabPedido: TTabItem
       CustomIcon = <
         item
@@ -52,8 +52,8 @@ object frmProdutos: TfrmProdutos
         FooterAppearanceClassName = 'TListHeaderObjects'
         ItemSpaces.Right = 10.000000000000000000
         Align = Client
-        Size.Width = 359.000000000000000000
-        Size.Height = 604.000000000000000000
+        Size.Width = 373.000000000000000000
+        Size.Height = 659.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         ItemAppearance.ItemHeight = 48
@@ -63,7 +63,7 @@ object frmProdutos: TfrmProdutos
             AppearanceObjectName = 'Text1'
             AppearanceClassName = 'TTextObjectAppearance'
             Appearance.TextAlign = Leading
-            Appearance.Width = 287.000000000000000000
+            Appearance.Width = 271.000000000000000000
             Appearance.Height = 26.000000000000000000
             Appearance.PlaceOffset.X = 8.000000000000000000
           end
@@ -95,11 +95,11 @@ object frmProdutos: TfrmProdutos
             Appearance.Font.StyleExt = {00070000000000000004000000}
             Appearance.WordWrap = True
             Appearance.TintColor = claWhite
-            Appearance.Width = 50.000000000000000000
+            Appearance.Width = 42.000000000000000000
             Appearance.Height = 48.000000000000000000
             Appearance.Align = Trailing
             Appearance.VertAlign = Center
-            Appearance.PlaceOffset.X = -7.000000000000000000
+            Appearance.PlaceOffset.X = 1.000000000000000000
             Appearance.PlaceOffset.Y = 1.000000000000000000
             Appearance.Text = '+'
           end>
@@ -177,7 +177,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 258.000000000000000000
                 Size.Height = 29.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'rdbPreco1'
               end
             end
@@ -194,7 +194,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 258.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
               end
             end
@@ -211,7 +211,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 258.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
               end
             end
@@ -229,7 +229,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 258.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'RadioButton1'
               end
             end
@@ -243,7 +243,7 @@ object frmProdutos: TfrmProdutos
               object edtObservacao: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Bottom
-                TabOrder = 38
+                TabOrder = 39
                 Position.X = 10.000000000000000000
                 Position.Y = 3.000000000000000000
                 Margins.Left = 10.000000000000000000
@@ -265,7 +265,7 @@ object frmProdutos: TfrmProdutos
                 Size.Width = 89.000000000000000000
                 Size.Height = 31.000000000000000000
                 Size.PlatformDefault = False
-                TabOrder = 38
+                TabOrder = 39
                 Text = 'sabores'
                 TextSettings.Trimming = None
                 TintColor = claSteelblue
@@ -287,8 +287,8 @@ object frmProdutos: TfrmProdutos
         object layTabProdutos: TLayout
           Align = Client
           Locked = True
-          Size.Width = 359.000000000000000000
-          Size.Height = 556.000000000000000000
+          Size.Width = 373.000000000000000000
+          Size.Height = 627.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
         end
@@ -343,7 +343,7 @@ object frmProdutos: TfrmProdutos
               object edtPeso: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Bottom
-                TabOrder = 38
+                TabOrder = 39
                 KeyboardType = NumberPad
                 Position.X = 10.000000000000000000
                 Position.Y = 3.000000000000000000
@@ -380,9 +380,10 @@ object frmProdutos: TfrmProdutos
         Align = Client
         Fill.Kind = None
         Locked = True
-        Size.Width = 359.000000000000000000
-        Size.Height = 604.000000000000000000
+        Size.Width = 403.000000000000000000
+        Size.Height = 576.000000000000000000
         Size.PlatformDefault = False
+        Visible = False
         object rectObs: TRectangle
           Align = Center
           Fill.Color = claLightgoldenrodyellow
@@ -496,8 +497,8 @@ object frmProdutos: TfrmProdutos
         Margins.Bottom = 5.000000000000000000
         Position.X = 10.000000000000000000
         Position.Y = 5.000000000000000000
-        Size.Width = 339.000000000000000000
-        Size.Height = 299.000000000000000000
+        Size.Width = 353.000000000000000000
+        Size.Height = 260.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         ItemAppearance.ItemHeight = 60
@@ -560,6 +561,7 @@ object frmProdutos: TfrmProdutos
         ItemAppearanceObjects.HeaderObjects.Text.PlaceOffset.X = 14.000000000000000000
         ItemAppearanceObjects.FooterObjects.Text.Width = 303.000000000000000000
         ItemAppearanceObjects.FooterObjects.Text.Height = 24.000000000000000000
+        ItemAppearanceObjects.FooterObjects.Text.Visible = False
         ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.X = 16.000000000000000000
         ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.Y = 8.000000000000000000
         CanSwipeDelete = False
@@ -567,8 +569,8 @@ object frmProdutos: TfrmProdutos
       end
       object ToolBar1: TToolBar
         Align = Bottom
-        Position.Y = 556.000000000000000000
-        Size.Width = 359.000000000000000000
+        Position.Y = 611.000000000000000000
+        Size.Width = 373.000000000000000000
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
@@ -576,10 +578,12 @@ object frmProdutos: TfrmProdutos
         object Button2: TButton
           Align = Center
           StyledSettings = [Family, Size, Style]
-          Margins.Bottom = 10.000000000000000000
-          Size.Width = 97.000000000000000000
-          Size.Height = 32.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 161.000000000000000000
+          Size.Height = 26.000000000000000000
           Size.PlatformDefault = False
+          StyleLookup = 'buttonstyle'
           TabOrder = 0
           Text = 'Finalizar'
           TextSettings.FontColor = claWhite
@@ -588,33 +592,17 @@ object frmProdutos: TfrmProdutos
           OnClick = Button2Click
         end
       end
-      object lblTotal: TLabel
-        Align = Top
-        StyledSettings = [Family, FontColor]
-        Margins.Left = 20.000000000000000000
-        Margins.Right = 20.000000000000000000
-        Position.X = 20.000000000000000000
-        Position.Y = 517.000000000000000000
-        Size.Width = 319.000000000000000000
-        Size.Height = 43.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.Font.Size = 20.000000000000000000
-        TextSettings.Font.StyleExt = {00070000000000000004000000}
-        TextSettings.HorzAlign = Center
-        Text = 'lblTotal'
-        TabOrder = 2
-      end
       object rectCliente: TRectangle
         Align = Top
         Cursor = crHandPoint
         Fill.Color = claWhite
-        Margins.Left = 10.000000000000000000
-        Margins.Top = 20.000000000000000000
-        Margins.Right = 10.000000000000000000
-        Position.X = 10.000000000000000000
-        Position.Y = 404.000000000000000000
-        Size.Width = 339.000000000000000000
-        Size.Height = 81.000000000000000000
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 363.000000000000000000
+        Size.Width = 333.000000000000000000
+        Size.Height = 68.000000000000000000
         Size.PlatformDefault = False
         Stroke.Color = xFFD6D6D6
         OnClick = rectClienteClick
@@ -624,7 +612,7 @@ object frmProdutos: TfrmProdutos
           Margins.Left = 10.000000000000000000
           Margins.Right = 10.000000000000000000
           Position.X = 10.000000000000000000
-          Size.Width = 291.000000000000000000
+          Size.Width = 285.000000000000000000
           Size.Height = 23.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
@@ -641,8 +629,8 @@ object frmProdutos: TfrmProdutos
           Margins.Top = 5.000000000000000000
           Margins.Right = 10.000000000000000000
           Margins.Bottom = 5.000000000000000000
-          Size.Width = 291.000000000000000000
-          Size.Height = 48.000000000000000000
+          Size.Width = 285.000000000000000000
+          Size.Height = 35.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 16.000000000000000000
           TextSettings.Font.StyleExt = {00060000000000000004000000}
@@ -687,57 +675,184 @@ object frmProdutos: TfrmProdutos
           Align = MostRight
           HitTest = False
           Opacity = 0.400000005960464500
-          Position.X = 311.000000000000000000
+          Position.X = 305.000000000000000000
           Size.Width = 28.000000000000000000
-          Size.Height = 81.000000000000000000
+          Size.Height = 68.000000000000000000
           Size.PlatformDefault = False
         end
       end
-      object cbxFormaPgto: TComboBox
+      object recTotalReceber: TRectangle
+        Align = Bottom
+        Fill.Kind = None
+        Position.Y = 520.000000000000000000
+        Sides = [Right]
+        Size.Width = 373.000000000000000000
+        Size.Height = 91.000000000000000000
+        Size.PlatformDefault = False
+        object lblTotal: TLabel
+          Align = Bottom
+          StyledSettings = [Family, FontColor]
+          Margins.Right = 200.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Position.Y = 38.000000000000000000
+          Size.Width = 173.000000000000000000
+          Size.Height = 43.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'lblTotal'
+          TabOrder = 2
+        end
+        object Label1: TLabel
+          Align = Top
+          Size.Width = 373.000000000000000000
+          Size.Height = 37.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.HorzAlign = Center
+          Text = 'TOTAL PAGAR              TOTAL RECEBIDO'
+          TabOrder = 5
+        end
+        object lblPAgo: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, FontColor]
+          Margins.Left = 200.000000000000000000
+          Position.X = 200.000000000000000000
+          Position.Y = 37.000000000000000000
+          Size.Width = 173.000000000000000000
+          Size.Height = 46.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'lblPAgo'
+          TabOrder = 6
+        end
+      end
+      object Rectangle1: TRectangle
         Align = Top
-        Items.Strings = (
-          'DINHEIRO'
-          'PIX'
-          'CARTAO DE CREDITO'
-          'CRATAO DE DEBITO'
-          'OUTROS')
-        ItemIndex = 0
-        Margins.Left = 30.000000000000000000
+        Cursor = crHandPoint
+        Fill.Color = claWhite
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 441.000000000000000000
+        Size.Width = 333.000000000000000000
+        Size.Height = 67.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFD6D6D6
+        OnClick = Rectangle1Click
+        object Label4: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 278.000000000000000000
+          Size.Height = 57.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.FontColor = xFF616161
+          Text = 'Formas de Pagamentos'
+          TabOrder = 0
+        end
+        object Image3: TImage
+          MultiResBitmap.Height = 128
+          MultiResBitmap.Width = 128
+          MultiResBitmap = <
+            item
+              Width = 128
+              Height = 128
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000080000000800806000000C33E61
+                CB0000000473424954080808087C0864880000027049444154789CEDDD3F6A54
+                510046F19318883B3060E30A6CECDC80889595C2283E4D5C82B6828BD14AB048
+                304BB0B0B0B57001363689A84433162130411CF3FECDCD7DDFF9C1EB2670E13B
+                E4BD4CC804244992244992244DDFA5D20718C03A7003B8095C05BE0047454FA4
+                95B9037C06E60BD737E025B051F05C5A8119F09BB3E32F5EBBC066B1D369545B
+                C021FF1EFFF4DAC30826E939FF1FFFF4DA072E9739A6C6F28AF30760044BAC97
+                3E4047C72D5F7F0B788B11FCA5D6003E76F81A2398902BC001ED6E033E184ECC
+                8C935B811104DB61F97B013E1806300219818C401881806D8C209E11C8086404
+                C208841108788211C4330219818C40188130026104C2088411082310F0182388
+                67043202198130026104021A8C205E8311C46B308278F7815F184134239011C8
+                08841108231027111C6104D18C4046202310F090EE0F866FA8F7A37CB5A04F04
+                CDEA8FAB31748DE07D89C36A1CF768FF4CF013581BF350DE632EB679E9036818
+                DE0282F579087C54E0BC1A50DF1F0347BDFF6B5C7DDE087A876F0455ADCF6F06
+                1DBF728E1FCCF183397E30C70FE6F8C11ABAFF9590E357AEC1F16335387EAC3E
+                9F15E0F89573FC608E1FCCF183397E30C70FD6E773831DBF728E1FCCF183397E
+                30C70FE6F8C11C3F98E30773FC608E1F6C1BC78FE5F8C11C3F98E30773FC608E
+                1F6C07C78FE5F8C11C3F98E30773FC608E1FEC298E1FCBF1833D008EE936FE1E
+                B0B9FA236B285BC0218E1FEB198E1FED35DEF30751EBFF0B98B77CFD3E7017F8
+                31C25954409B5B80DFF627E8BC0F818E3F613396BF07B08BE34FDE6DE0136787
+                3F005E001B05CF558D29FC478A35E03A700DF80A7C00BE973C90244992244992
+                245D2C7F00AB5FCF907C2A3C150000000049454E44AE426082}
+              FileName = 
+                'D:\99Coders\Posts\345 - Criando uma consulta de clientes global ' +
+                'para todos as suas aplica'#231#245'es\Fontes\Images\more.png'
+            end>
+          Align = Right
+          HitTest = False
+          Opacity = 0.400000005960464500
+          Position.X = 298.000000000000000000
+          Size.Width = 35.000000000000000000
+          Size.Height = 67.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
+      object Rectangle2: TRectangle
+        Align = Top
+        Cursor = crHandPoint
+        Fill.Color = claWhite
+        Margins.Left = 20.000000000000000000
         Margins.Top = 20.000000000000000000
-        Margins.Right = 30.000000000000000000
-        Position.X = 30.000000000000000000
-        Position.Y = 352.000000000000000000
-        Size.Width = 299.000000000000000000
-        Size.Height = 32.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Position.X = 20.000000000000000000
+        Position.Y = 290.000000000000000000
+        Size.Width = 333.000000000000000000
+        Size.Height = 63.000000000000000000
         Size.PlatformDefault = False
-        TabOrder = 4
-      end
-      object Label5: TLabel
-        Align = Top
-        Position.Y = 485.000000000000000000
-        Size.Width = 359.000000000000000000
-        Size.Height = 32.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.HorzAlign = Center
-        Text = 'TOTAL'
-        TabOrder = 5
-      end
-      object Label4: TLabel
-        Align = Top
-        Position.Y = 309.000000000000000000
-        Size.Width = 359.000000000000000000
-        Size.Height = 23.000000000000000000
-        Size.PlatformDefault = False
-        TextSettings.HorzAlign = Center
-        Text = 'Forma Pagamento'
-        TabOrder = 6
+        Stroke.Color = xFFD6D6D6
+        object Label6: TLabel
+          Align = Top
+          StyledSettings = [Family]
+          Margins.Left = 10.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Position.X = 10.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 313.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = xFF616161
+          TextSettings.HorzAlign = Center
+          Text = 'Fechamento Pedido Data Mov. Caixa'
+          TabOrder = 1
+        end
+        object lblDataCaixa: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Margins.Bottom = 10.000000000000000000
+          Size.Width = 313.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          TextSettings.Font.StyleExt = {00060000000000000004000000}
+          TextSettings.FontColor = xFF616161
+          TextSettings.HorzAlign = Center
+          Text = '15/02/2023'
+          TabOrder = 0
+        end
       end
     end
   end
   object rectHeader: TRectangle
     Align = Top
     Fill.Color = claCornflowerblue
-    Size.Width = 359.000000000000000000
+    Size.Width = 373.000000000000000000
     Size.Height = 49.000000000000000000
     Size.PlatformDefault = False
     Stroke.Kind = None
@@ -1005,7 +1120,7 @@ object frmProdutos: TfrmProdutos
         end>
       Align = Right
       Margins.Right = 30.000000000000000000
-      Position.X = 235.000000000000000000
+      Position.X = 249.000000000000000000
       Size.Width = 94.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
@@ -1830,8 +1945,8 @@ object frmProdutos: TfrmProdutos
   end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>
-    Left = 104
-    Top = 128
+    Left = 56
+    Top = 232
   end
   object BindingsList1: TBindingsList
     Methods = <>
@@ -1873,7 +1988,7 @@ object frmProdutos: TfrmProdutos
   object BindSourceDB2: TBindSourceDB
     DataSet = dmLocal.memPedido
     ScopeMappings = <>
-    Left = 80
-    Top = 176
+    Left = 104
+    Top = 248
   end
 end

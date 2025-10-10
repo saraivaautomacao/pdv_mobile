@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=224,166,53,58
+Coordinates=110,297,53,58
 ExplicitSubNodes=ImageIndex
 Visible=True
 
@@ -154,7 +154,7 @@ Coordinates=1290,200,106,58
 Coordinates=344,130,91,36
 
 [BindSourceDB2]
-Coordinates=620,30,123,388
+Coordinates=650,0,123,388
 
 [spinQuant]
 Coordinates=107,1,73,58
@@ -171,9 +171,6 @@ Coordinates=473,320,59,58
 [Label2]
 Coordinates=365,155,53,58
 
-[Label4]
-Coordinates=67,165,53,58
-
 [Image2]
 Coordinates=227,199,57,58
 
@@ -189,17 +186,11 @@ Coordinates=121,147,76,36
 [FloatAnimation3]
 Coordinates=471,402,108,36
 
-[Label5]
-Coordinates=110,297,53,58
-
 [Label3]
 Coordinates=227,402,53,58
 
 [edtPreco]
 Coordinates=365,78,66,58
-
-[cbxFormaPgto]
-Coordinates=0,0,101,146
 
 [FrmBuscaCliente.BindSourceDB1]
 Coordinates=0,0,208,124
@@ -210,4 +201,13 @@ Visible=False
 
 [Timer1]
 Coordinates=235,78,55,36
+
+[recTotalReceber]
+Coordinates=781,375,110,36
+
+[dmLocal.fdPagamentos]
+Coordinates=590,510,149,58
+
+[dmLocal.qryFin]
+Visible=False
 

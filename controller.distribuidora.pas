@@ -16,6 +16,7 @@ interface
       class function Carga(Tabela:string;out status:integer):TFDMemTable;
       class function statusmesa(out status:integer):TFDMemTable;
       class function statuscaixa(out status: integer): String;
+      class function data_caixa(out status: integer): String;
       class function conferencia(idmesa: string;
       out status: integer): TFDMemTable; static;
        class function imprimeparcial(mesa: string; out status: integer): String; static;
@@ -107,6 +108,29 @@ begin
              .get;
    status:=resp.StatusCode;
    result:=memtable;
+end;
+
+
+class function TControllerDistribuidora.data_caixa(out status: integer): String;
+var
+    Resp : IResponse;
+begin
+
+   try
+     Resp := TRequest.New.BaseURL(config.url)
+             .Resource('datacaixa')
+             .BasicAuthentication('username', 'password')
+             .Accept('application/json')
+             .get;
+   except on E: exception do
+    begin
+         status:=404;
+         result:='';
+         exit;
+     end;
+   end;
+   status:=resp.StatusCode;
+   result:=resp.Content;
 end;
 
 class function TControllerDistribuidora.gerapedido(objped: TJsonobject;out status: integer): string;

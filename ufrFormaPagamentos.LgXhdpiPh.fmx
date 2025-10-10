@@ -1,0 +1,47 @@
+inherited frmFormaPagamento_LgXhdpiPh: TfrmFormaPagamento_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Layout1: TLayout
+    Size.Width = 450.000000000000000000
+    Size.Height = 695.000000000000000000
+    inherited recFormaPgto: TRectangle
+      Margins.Right = 20.000000000000000000
+      Size.Width = 420.000000000000000000
+      inherited Label4: TLabel
+        Margins.Top = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 352.000000000000000000
+      end
+      inherited cbxFormaPgto: TComboBox
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 38.000000000000000000
+      end
+      inherited edtRecebido: TNumberBox
+        Position.X = 201.000000000000000000
+        Position.Y = 43.000000000000000000
+        Margins.Top = 10.000000000000000000
+      end
+      inherited SpeedButton2: TSpeedButton
+        Position.X = 372.000000000000000000
+      end
+    end
+    inherited ListView1: TListView
+      Size.Width = 450.000000000000000000
+      Size.Height = 439.000000000000000000
+    end
+    inherited Rectangle1: TRectangle
+      Position.Y = 558.000000000000000000
+      Size.Width = 450.000000000000000000
+    end
+    inherited rectHeader: TRectangle
+      Size.Width = 450.000000000000000000
+      inherited img_voltar: TImage
+        MultiResBitmap.Height = 32
+        MultiResBitmap.Width = 32
+      end
+    end
+  end
+end

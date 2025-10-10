@@ -73,12 +73,18 @@ type
     Label3: TLabel;
     lblCliente: TLabel;
     Image2: TImage;
-    cbxFormaPgto: TComboBox;
-    Label5: TLabel;
-    Label4: TLabel;
     imgCarga: TImage;
     FloatAnimation3: TFloatAnimation;
     Timer1: TTimer;
+    recTotalReceber: TRectangle;
+    Label1: TLabel;
+    lblPAgo: TLabel;
+    Rectangle1: TRectangle;
+    Label4: TLabel;
+    Image3: TImage;
+    Rectangle2: TRectangle;
+    Label6: TLabel;
+    lblDataCaixa: TLabel;
     procedure img_voltarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure lstVProdutosButtonClick(const Sender: TObject;
@@ -96,6 +102,7 @@ type
     procedure edtPrecoExit(Sender: TObject);
     procedure edtPrecoTyping(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Rectangle1Click(Sender: TObject);
   private
     { Private declarations }
      precoUnit:Extended;
@@ -110,6 +117,7 @@ type
     function caixaAberto: Char;
     procedure AddCliente(produto, id_produto: string; preco: extended);
     procedure listaprodutos;
+    function totalpago:extended;
   public
     { Public declarations }
     numMesa:String;
@@ -122,32 +130,42 @@ implementation
 
 {$R *.fmx}
 {$R *.LgXhdpiTb.fmx ANDROID}
-{$R *.LgXhdpiPh.fmx ANDROID}
 
 uses udmLocal,system.JSON,
-controller.distribuidora, UnitBuscaCliente;
+controller.distribuidora, UnitBuscaCliente, ufrFormaPagamentos;
 
 procedure TfrmProdutos.Button2Click(Sender: TObject);
 begin
-    if cbxFormaPgto.ItemIndex=-1 then
-    begin
-        fancy.Show(TIconDialog.Info, 'Informacao','Informar forma pagamento',  'OK');
-        abort;
-    end;
-     var qry:TFdQuery:=TFDQuery.Create(nil);
+
+    // var qry:TFdQuery:=TFDQuery.Create(nil);
      var objPed:TJSONObject:=TJSONObject.Create;
      try
-         qry.Connection:=dmLocal.conLocal;
-         qry.open('select * from finalizadora where finalizadora='+
-        quotedstr(cbxFormaPgto.Items[cbxFormaPgto.ItemIndex]));
-        if (lblCliente.Tag<=0) and  (qry.fieldbyname('PArcelar').asString='S') THEN
+         //qry.Connection:=dmLocal.conLocal;
+       IF lblTotal.text<>lblPAgo.text Then
+       begin
+          fancy.Show(TIconDialog.Info, 'Informacao','Vr Pago difere VR Recebido',  'OK');
+              exit;
+       end;
+       dmlocal.qryfin.first;
+       var parcelar:boolean:=false;
+       while not dmlocal.qryfin.eof do
+       begin
+
+           if (dmlocal.qryFinparcelar.asstring='S') and (dmlocal.qryfinvalor.asextended<>0) then
+           begin
+             parcelar:=true;
+             break;
+           end;
+           dmlocal.qryfin.next;
+       end;
+        if (lblCliente.Tag<=0)  and  (parcelar) THEN
         begin
             fancy.Show(TIconDialog.Info, 'Informacao','Informar cliente',  'OK');
               exit;
         end;
         objped.AddPair('codigocliente',lblCliente.Tag.ToString);
         objped.AddPair('cliente',lblcliente.text);
-        objped.AddPair('pagamento', qry.fieldbyname('id').asstring);
+        objped.AddPair('pagamento', 'teste');
         objped.AddPair('codigovendedor',TJSONNumber.create(StrToInt(udmlocal.CodigoVendedor)));
         var arrayitems:=TJSONArray.Create;
         dmLocal.memPedido.First;
@@ -162,8 +180,23 @@ begin
             arrayitems.AddElement(objItemped);
             dmlocal.memPedido.next;
         end;
-
         objped.AddPair('itenspedido',arrayitems);
+        var arrayitemsPAgto:=TJSONArray.Create;
+         dmlocal.qryfin.first;
+        while not dmlocal.qryfin.eof do
+        begin
+           if dmlocal.qryFinvalor.asextended>0 Then
+           begin
+             var objItempgto:=TJSONObject.Create;
+             objItempgto.AddPair('idfinalizadora',TJsonNumber.create(dmlocal.qryFinid.asinteger));
+              objItempgto.AddPair('finalizadora',dmlocal.qryFinfinalizadora.asstring);
+               objItempgto.AddPair('parcelar',dmlocal.qryFinparcelar.asstring);
+              objItempgto.AddPair('valor',TJsonNumber.create(dmlocal.qryFinvalor.asextended));
+              arrayitemspagto.AddElement(objItempgto);
+           end;
+           dmlocal.qryfin.next;
+        end;
+        objped.AddPair('formapgto',arrayitemsPAgto);
         var status:integer;
         var retorno:=
         TControllerDistribuidora.gerapedido(objped,status);
@@ -177,11 +210,18 @@ begin
         dmlocal.memPedido.open;
         lblcliente.text:='Cliente Padrao';
         lblcliente.Tag:=0;
-        cbxFormaPgto.ItemIndex:=-1;
+       dmlocal.qryFin.first;
+       while not dmlocal.qryFin.eof do
+       begin
+         dmlocal.qryFin.edit;
+         dmlocal.qryFinvalor.AsExtended:=0;
+         dmlocal.qryFin.post;
+         dmlocal.qryFin.next;
+       end;
+
         tabPrincipal.ActiveTab:=tabPedido;
       finally
-        qry.close;
-        qry.DisposeOf;
+
 
       end;
 end;
@@ -277,20 +317,7 @@ end;
 procedure TfrmProdutos.Timer1Timer(Sender: TObject);
 begin
     timer1.Enabled:=false;
-    var qry:TFdQuery:=TFDQuery.Create(nil);
-    try
-       qry.Connection:=dmLocal.conLocal;
-       cbxFormaPgto.Items.Clear;
-       qry.open('select * from finalizadora');
-        while not qry.eof do
-       begin
-         cbxFormaPgto.Items.Add( qry.fieldbyname('finalizadora').asstring) ;
-         qry.next;
-       end;
-    finally
-       qry.close;
-       qry.disposeof;
-    end;
+
     dmLocal.memPedido.open;
 
     lblQuant.text:=dmLocal.memPedido.RecordCount.ToString;
@@ -301,8 +328,29 @@ begin
       break;
     end;
     listaProdutos;
+    dmlocal.qryfin.open;
+    while not dmlocal.qryfin.eof do
+    begin
+       dmlocal.qryFin.edit;
+       dmlocal.qryFinvalor.ascurrency:=0;
+       dmlocal.qryfin.post;
+       dmlocal.qryfin.next;
+    end;
+    dmlocal.qryfin.close;
+end;
 
-
+function TfrmProdutos.totalpago: extended;
+begin
+  with  dmlocal do
+  begin
+     qryFin.first;
+     result:=0;
+     while not qryfin.eof do
+     begin
+        result:=result+qryFinValor.AsCurrency;
+        qryfin.next;
+     end;
+  end;
 end;
 
 procedure TfrmProdutos.carga;
@@ -345,7 +393,7 @@ begin
                     query.ParamByName('codigo').AsString:=memCarga.FieldByName('codigo').AsString;
                     query.ParamByName('produto').AsString:=memCarga.FieldByName('produto').AsString;
                     query.ParamByName('unidade').AsString:=memCarga.FieldByName('unidade').AsString;
-                    query.ParamByName('lksetor').AsInteger:=memCarga.FieldByName('lksetor').AsInteger;
+                    query.ParamByName('lksetor').AsInteger:=strtointdef(memCarga.FieldByName('lksetor').Asstring,0);
                     query.ParamByName('precovenda').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda').AsString,0);
                     query.ExecSQL;
                     var item:TListViewItem:= lstvProdutos.Items.Add;
@@ -364,9 +412,10 @@ begin
                     end;
                 memCarga.Next;
                  end;
-              end);
+
 
               memCarga.Close;
+
               memCarga.AppendData(TControllerDistribuidora.Carga('grupo',status));
               memCarga.First;
               query.SQL.Text:='delete from grupo';
@@ -381,6 +430,7 @@ begin
               end;
               memCarga.Close;
               //vendedores
+
               query.SQL.Text:='delete from vendedor';
               query.ExecSQL;
               query.SQL.Text:='Insert into vendedor (codvend,cognome,senha)'+
@@ -432,21 +482,16 @@ begin
                 memCarga.Next;
               end;
               memCarga.Close;
-              cbxFormaPgto.Items.Clear;
-              query.open('select * from finalizadora');
-              while not query.eof do
-              begin
-                   cbxFormaPgto.Items.Add( query.fieldbyname('finalizadora').asstring) ;
-                    query.next;
-              end;
+
+              end);
 
              end;
 
       finally
         memCarga.Close;
         query.close;
-        query.disposeof;
-        memcarga.disposeof;
+      //  query.disposeof;
+       //memcarga.disposeof;
 
        end;
      end);
@@ -473,6 +518,7 @@ begin
     frmProdutos:=nil;
     fancy.DisposeOf;
     dmLocal.memPedido.close;
+    dmLocal.qryFin.close;
     lblQuant.text:='0';
 end;
 
@@ -545,6 +591,7 @@ procedure TfrmProdutos.FormShow(Sender: TObject);
 begin
    id_produto:='';
    Situacaocaixa:=caixaaberto;
+   lblDataCaixa.text:='Fechado';
    tabPrincipal.ActiveTab:=tabPedido;
    if   situacaocaixa='F' Then
    begin
@@ -556,15 +603,24 @@ begin
        fancy.Show(TIconDialog.Info,'Aviso','Servidor Inativo', 'OK');
        exit;
    end;
+    var status:integer;
+    lblDataCaixa.text:=TControllerdiSTRIBUIDORA.data_caixa(status);
+    if status=200 then
+   begin
+    var  JSONResponse:TjsonObject := TJSONObject.ParseJSONValue(lbldataCaixa.text) as TJSONObject;
+
+    lblDataCaixa.text:=(JSONResponse.GetValue('data').Value);
+    end;
     lblQuant.text:='0';
     lblCliente.Text:='Cliente Padrao';
     controlecarga:=false;
-   rectTabelaPreco.Visible:=false;
+    rectTabelaPreco.Visible:=false;
     recPeso.Visible:=false;
     tabPrincipal.ActiveTab:=tabPedido;
     fancy := TFancyDialog.Create(FrmProdutos);
     rectObs1.Visible:=false;
     timer1.Enabled:=true;
+    lblPago.text:='';
 end;
 
 procedure TfrmProdutos.Image1Click(Sender: TObject);
@@ -575,7 +631,7 @@ begin
      fancy.Show(TIconDialog.Info, 'Aviso','Carrinho vazio', 'OK');
      exit;
   end;
-  cbxFormaPgto.ItemIndex:=-1;
+
   Tabprincipal.ActiveTab:=tabFinalizar;
 end;
 
@@ -669,6 +725,14 @@ begin
 
 
    end;
+end;
+
+procedure TfrmProdutos.Rectangle1Click(Sender: TObject);
+begin
+    if NOT Assigned(FrmFormaPagamento) then
+        Application.CreateForm(TFrmFormaPagamento, FrmFormaPagamento);
+   frmFormaPagamento.TotalPagar:=dmLocal.memPedidoSomaTotal.value;
+   FrmFormaPagamento.Show;
 end;
 
 procedure TfrmProdutos.rectClienteClick(Sender: TObject);

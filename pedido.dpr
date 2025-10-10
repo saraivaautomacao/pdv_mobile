@@ -11,7 +11,8 @@ uses
   controller.distribuidora in 'controller.distribuidora.pas',
   ufrprodutos in 'ufrprodutos.pas' {frmProdutos},
   UnitBuscaCliente in 'UnitBuscaCliente.pas' {FrmBuscaCliente},
-  uLoading in 'uLoading.pas';
+  uLoading in 'uLoading.pas',
+  ufrFormaPagamentos in 'ufrFormaPagamentos.pas' {frmFormaPagamento};
 
 {$R *.res}
 

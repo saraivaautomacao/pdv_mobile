@@ -5,7 +5,7 @@
         <FrameworkType>FMX</FrameworkType>
         <Base>True</Base>
         <Config Condition="'$(Config)'==''">Release</Config>
-        <Platform Condition="'$(Platform)'==''">Android</Platform>
+        <Platform Condition="'$(Platform)'==''">Android64</Platform>
         <TargetedPlatforms>32787</TargetedPlatforms>
         <AppType>Application</AppType>
         <MainSource>pedido.dpr</MainSource>
@@ -321,6 +321,10 @@
             <FormType>fmx</FormType>
         </DCCReference>
         <DCCReference Include="uLoading.pas"/>
+        <DCCReference Include="ufrFormaPagamentos.pas">
+            <Form>frmFormaPagamento</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
