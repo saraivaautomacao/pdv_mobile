@@ -116,6 +116,7 @@ end;
 
 procedure TfrmFormaPagamento.img_voltarClick(Sender: TObject);
 begin
+   frmProdutos.lblPAgo.text:=floattostrf(totalRecebido,ffFixed,12,2);
    close;
 end;
 
@@ -158,9 +159,9 @@ begin
        end;
     end;
   edtrecebido.visible:=false;
-  lblTotalRecebido.text:=FloatToStrf(TotalRecebido,ffnumber,12,2);
+  lblTotalRecebido.text:=FloatToStrf(TotalRecebido,ffcurrency,12,2);
   cbxFormaPgto.ItemIndex:=-1;
-  frmProdutos.lblPAgo.text:=lbltotalrecebido.text;
+
 
 end;
 

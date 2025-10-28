@@ -2283,7 +2283,6 @@ object dmLocal: TdmLocal
       Active = True
       currency = True
       DisplayName = ''
-      DisplayFormat = ' ###,###,##0.00'
       Expression = 'Sum(vrunit*qtde)'
     end
   end

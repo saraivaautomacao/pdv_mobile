@@ -7,6 +7,14 @@ inherited frmFormaPagamento_LgXhdpiTb: TfrmFormaPagamento_LgXhdpiTb
     Size.Height = 829.000000000000000000
     inherited recFormaPgto: TRectangle
       Size.Width = 470.000000000000000000
+      inherited cbxFormaPgto: TComboBox
+        Position.Y = 20.000000000000000000
+        Size.Height = 45.000000000000000000
+      end
+      inherited edtRecebido: TNumberBox
+        Position.Y = 20.000000000000000000
+        Size.Height = 45.000000000000000000
+      end
     end
     inherited ListView1: TListView
       Size.Width = 480.000000000000000000

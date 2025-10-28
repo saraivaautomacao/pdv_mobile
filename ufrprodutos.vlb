@@ -1,5 +1,5 @@
 ﻿[]
-Coordinates=110,297,53,58
+Coordinates=473,78,55,36
 ExplicitSubNodes=ImageIndex
 Visible=True
 
@@ -12,9 +12,6 @@ Coordinates=710,380,120,102
 [dmLocal.memPedido]
 Coordinates=990,90,135,36
 Visible=False
-
-[rectTabelaPreco]
-Coordinates=434,463,109,36
 
 [rectHeader]
 Coordinates=355,467,78,36
@@ -43,55 +40,9 @@ Coordinates=810,320,82,36
 [img_voltar]
 Coordinates=434,1,74,58
 
-[rdbPreco4]
-Coordinates=15,220,74,36
-
-[lstbxTabPrecos]
-Coordinates=190,510,139,212
-
-[lstbxPreco3]
-Coordinates=434,155,82,36
-
-[rdbPreco3]
-Coordinates=434,210,74,36
-
-[lstbxPreco2]
-Coordinates=434,265,82,36
-
-[lstbxFinalizar]
-Coordinates=256,466,90,36
-
-[lstbxDescItem]
-Coordinates=0,430,95,36
-
-[edtObservacao]
-Coordinates=0,0,102,58
-
-[lstbxPreco4]
-Coordinates=581,221,82,36
-
-[lstbxObservacao]
-Coordinates=581,276,110,36
-Visible=True
-
-[lstbxPreco1]
-Coordinates=710,450,82,36
-
 [dmLocal.memSAbor]
 Coordinates=900,510,130,36
 Visible=False
-
-[SpeedButton1]
-Coordinates=434,78,96,58
-
-[rdbPreco2]
-Coordinates=581,386,74,36
-
-[Button1]
-Coordinates=52,77,59,58
-
-[rdbPreco1]
-Coordinates=581,441,74,36
 
 [tabPrincipal]
 Coordinates=78,467,82,36
@@ -101,12 +52,6 @@ Visible=True
 Coordinates=890,0,203,300
 Visible=True
 ExplicitSubNodes=ItemAppearance.FooterAppearance
-
-[Button2]
-Coordinates=107,70,59,58
-
-[ToolBar1]
-Coordinates=273,148,67,36
 
 [dmLocal.dtsLinkPedido]
 Coordinates=419,519,148,36
@@ -199,15 +144,43 @@ Coordinates=0,0,208,124
 Coordinates=199,78,125,36
 Visible=False
 
-[Timer1]
-Coordinates=235,78,55,36
-
 [recTotalReceber]
 Coordinates=781,375,110,36
 
 [dmLocal.fdPagamentos]
-Coordinates=590,510,149,58
+Coordinates=590,510,149,146
 
 [dmLocal.qryFin]
 Visible=False
+Coordinates=0,0,103,36
+
+[Label6]
+Coordinates=67,165,53,58
+
+[Rectangle2]
+Coordinates=248,155,80,36
+
+[Label4]
+Coordinates=86,402,53,58
+
+[lblPAgo]
+Coordinates=365,297,59,58
+
+[Button2]
+Coordinates=17,402,59,58
+
+[Rectangle3]
+Coordinates=248,276,80,36
+
+[Label1]
+Coordinates=110,297,53,58
+
+[lblDataCaixa]
+Coordinates=122,78,88,58
+
+[Rectangle1]
+Coordinates=546,45,80,36
+
+[Image3]
+Coordinates=248,78,57,58
 

@@ -125,178 +125,19 @@ object frmProdutos: TfrmProdutos
         OnButtonClick = lstVProdutosButtonClick
         ShowSelection = False
         SearchVisible = True
-        object rectTabelaPreco: TRectangle
-          Align = Contents
-          Fill.Kind = None
-          Size.Width = 368.000000000000000000
-          Size.Height = 578.000000000000000000
-          Size.PlatformDefault = False
-          Visible = False
-          object lstbxTabPrecos: TListBox
-            Align = Top
-            Locked = True
-            Margins.Left = 50.000000000000000000
-            Margins.Top = 30.000000000000000000
-            Margins.Right = 50.000000000000000000
-            Position.X = 50.000000000000000000
-            Position.Y = 30.000000000000000000
-            Size.Width = 268.000000000000000000
-            Size.Height = 259.000000000000000000
-            Size.PlatformDefault = False
-            StyleLookup = 'lstbxTabPrecosStyle1'
-            TabOrder = 0
-            ParentShowHint = False
-            ShowHint = False
-            ShowScrollBars = False
-            CanFocus = False
-            DisableFocusEffect = True
-            DefaultItemStyles.ItemStyle = ''
-            DefaultItemStyles.GroupHeaderStyle = ''
-            DefaultItemStyles.GroupFooterStyle = ''
-            MultiSelectStyle = Default
-            Viewport.Width = 268.000000000000000000
-            Viewport.Height = 259.000000000000000000
-            object lstbxDescItem: TListBoxItem
-              Selectable = False
-              TextSettings.Font.StyleExt = {00070000000000000004000000}
-              TextSettings.HorzAlign = Center
-              StyledSettings = [Family, Size]
-              TabOrder = 0
-              Text = 'Baio co feijao'
-            end
-            object lstbxPreco1: TListBoxItem
-              Selectable = False
-              Position.Y = 44.000000000000000000
-              Size.Width = 268.000000000000000000
-              Size.Height = 29.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 1
-              object rdbPreco1: TRadioButton
-                Align = Contents
-                Margins.Left = 10.000000000000000000
-                Size.Width = 258.000000000000000000
-                Size.Height = 29.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 39
-                Text = 'rdbPreco1'
-              end
-            end
-            object lstbxPreco2: TListBoxItem
-              Selectable = False
-              Position.Y = 73.000000000000000000
-              Size.Width = 268.000000000000000000
-              Size.Height = 32.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 2
-              object rdbPreco2: TRadioButton
-                Align = Contents
-                Margins.Left = 10.000000000000000000
-                Size.Width = 258.000000000000000000
-                Size.Height = 32.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 39
-                Text = 'RadioButton1'
-              end
-            end
-            object lstbxPreco3: TListBoxItem
-              Selectable = False
-              Position.Y = 105.000000000000000000
-              Size.Width = 268.000000000000000000
-              Size.Height = 32.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 3
-              object rdbPreco3: TRadioButton
-                Align = Contents
-                Margins.Left = 10.000000000000000000
-                Size.Width = 258.000000000000000000
-                Size.Height = 32.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 39
-                Text = 'RadioButton1'
-              end
-            end
-            object lstbxPreco4: TListBoxItem
-              Selectable = False
-              IsChecked = True
-              Position.Y = 137.000000000000000000
-              Size.Width = 268.000000000000000000
-              Size.Height = 32.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 4
-              object rdbPreco4: TRadioButton
-                Align = Contents
-                Margins.Left = 10.000000000000000000
-                Size.Width = 258.000000000000000000
-                Size.Height = 32.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 39
-                Text = 'RadioButton1'
-              end
-            end
-            object lstbxObservacao: TListBoxItem
-              Selectable = False
-              Position.Y = 169.000000000000000000
-              Size.Width = 268.000000000000000000
-              Size.Height = 40.000000000000000000
-              Size.PlatformDefault = False
-              TabOrder = 6
-              object edtObservacao: TEdit
-                Touch.InteractiveGestures = [LongTap, DoubleTap]
-                Align = Bottom
-                TabOrder = 39
-                Position.X = 10.000000000000000000
-                Position.Y = 3.000000000000000000
-                Margins.Left = 10.000000000000000000
-                Margins.Right = 10.000000000000000000
-                Margins.Bottom = 5.000000000000000000
-                Size.Width = 248.000000000000000000
-                Size.Height = 32.000000000000000000
-                Size.PlatformDefault = False
-                TextPrompt = 'observa'#231#227'o'
-              end
-            end
-            object lstbxFinalizar: TListBoxItem
-              Selectable = False
-              Position.Y = 209.000000000000000000
-              TabOrder = 5
-              object Button1: TButton
-                Position.X = 8.000000000000000000
-                Position.Y = 6.000000000000000000
-                Size.Width = 89.000000000000000000
-                Size.Height = 31.000000000000000000
-                Size.PlatformDefault = False
-                TabOrder = 39
-                Text = 'sabores'
-                TextSettings.Trimming = None
-                TintColor = claSteelblue
-              end
-              object SpeedButton1: TSpeedButton
-                Align = Center
-                Images = dmLocal.ImageList1
-                ImageIndex = 2
-                Size.Width = 48.000000000000000000
-                Size.Height = 48.000000000000000000
-                Size.PlatformDefault = False
-                StyleLookup = 'donetoolbutton'
-                Text = 'SpeedButton1'
-                TextSettings.Trimming = None
-              end
-            end
-          end
-        end
         object layTabProdutos: TLayout
           Align = Client
           Locked = True
           Size.Width = 373.000000000000000000
-          Size.Height = 627.000000000000000000
+          Size.Height = 611.000000000000000000
           Size.PlatformDefault = False
           TabOrder = 0
         end
         object recPeso: TRectangle
           Align = Contents
           Fill.Kind = None
-          Size.Width = 415.000000000000000000
-          Size.Height = 671.000000000000000000
+          Size.Width = 373.000000000000000000
+          Size.Height = 659.000000000000000000
           Size.PlatformDefault = False
           Visible = False
           object lstbxPeso: TListBox
@@ -307,7 +148,7 @@ object frmProdutos: TfrmProdutos
             Margins.Right = 50.000000000000000000
             Position.X = 50.000000000000000000
             Position.Y = 30.000000000000000000
-            Size.Width = 315.000000000000000000
+            Size.Width = 273.000000000000000000
             Size.Height = 131.000000000000000000
             Size.PlatformDefault = False
             StyleLookup = 'lstbxPesoStyle1'
@@ -323,7 +164,7 @@ object frmProdutos: TfrmProdutos
             DefaultItemStyles.GroupHeaderStyle = ''
             DefaultItemStyles.GroupFooterStyle = ''
             MultiSelectStyle = Default
-            Viewport.Width = 315.000000000000000000
+            Viewport.Width = 273.000000000000000000
             Viewport.Height = 131.000000000000000000
             object ListBoxItem1: TListBoxItem
               Selectable = False
@@ -336,21 +177,21 @@ object frmProdutos: TfrmProdutos
             object ListBoxItem6: TListBoxItem
               Selectable = False
               Position.Y = 44.000000000000000000
-              Size.Width = 315.000000000000000000
+              Size.Width = 273.000000000000000000
               Size.Height = 40.000000000000000000
               Size.PlatformDefault = False
               TabOrder = 2
               object edtPeso: TEdit
                 Touch.InteractiveGestures = [LongTap, DoubleTap]
                 Align = Bottom
-                TabOrder = 39
+                TabOrder = 38
                 KeyboardType = NumberPad
                 Position.X = 10.000000000000000000
                 Position.Y = 3.000000000000000000
                 Margins.Left = 10.000000000000000000
                 Margins.Right = 10.000000000000000000
                 Margins.Bottom = 5.000000000000000000
-                Size.Width = 295.000000000000000000
+                Size.Width = 253.000000000000000000
                 Size.Height = 32.000000000000000000
                 Size.PlatformDefault = False
                 TextPrompt = 'peso(gr)'
@@ -380,8 +221,8 @@ object frmProdutos: TfrmProdutos
         Align = Client
         Fill.Kind = None
         Locked = True
-        Size.Width = 403.000000000000000000
-        Size.Height = 576.000000000000000000
+        Size.Width = 373.000000000000000000
+        Size.Height = 659.000000000000000000
         Size.PlatformDefault = False
         Visible = False
         object rectObs: TRectangle
@@ -422,11 +263,12 @@ object frmProdutos: TfrmProdutos
             Touch.InteractiveGestures = [LongTap, DoubleTap]
             TabOrder = 3
             Cursor = crIBeam
+            Max = 9999.000000000000000000
             Position.X = 99.000000000000000000
             Position.Y = 73.000000000000000000
             Margins.Left = 10.000000000000000000
             Margins.Right = 10.000000000000000000
-            Size.Width = 155.000000000000000000
+            Size.Width = 158.000000000000000000
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             object Label2: TLabel
@@ -567,31 +409,6 @@ object frmProdutos: TfrmProdutos
         CanSwipeDelete = False
         ShowSelection = False
       end
-      object ToolBar1: TToolBar
-        Align = Bottom
-        Position.Y = 611.000000000000000000
-        Size.Width = 373.000000000000000000
-        Size.Height = 48.000000000000000000
-        Size.PlatformDefault = False
-        TabOrder = 1
-        TintColor = claCornflowerblue
-        object Button2: TButton
-          Align = Center
-          StyledSettings = [Family, Size, Style]
-          Margins.Top = 5.000000000000000000
-          Margins.Bottom = 5.000000000000000000
-          Size.Width = 161.000000000000000000
-          Size.Height = 26.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'buttonstyle'
-          TabOrder = 0
-          Text = 'Finalizar'
-          TextSettings.FontColor = claWhite
-          TextSettings.Trimming = None
-          TintColor = claTeal
-          OnClick = Button2Click
-        end
-      end
       object rectCliente: TRectangle
         Align = Top
         Cursor = crHandPoint
@@ -684,7 +501,7 @@ object frmProdutos: TfrmProdutos
       object recTotalReceber: TRectangle
         Align = Bottom
         Fill.Kind = None
-        Position.Y = 520.000000000000000000
+        Position.Y = 501.000000000000000000
         Sides = [Right]
         Size.Width = 373.000000000000000000
         Size.Height = 91.000000000000000000
@@ -702,7 +519,7 @@ object frmProdutos: TfrmProdutos
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.HorzAlign = Center
           Text = 'lblTotal'
-          TabOrder = 2
+          TabOrder = 1
         end
         object Label1: TLabel
           Align = Top
@@ -711,7 +528,7 @@ object frmProdutos: TfrmProdutos
           Size.PlatformDefault = False
           TextSettings.HorzAlign = Center
           Text = 'TOTAL PAGAR              TOTAL RECEBIDO'
-          TabOrder = 5
+          TabOrder = 4
         end
         object lblPAgo: TLabel
           Align = Top
@@ -725,7 +542,7 @@ object frmProdutos: TfrmProdutos
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           TextSettings.HorzAlign = Center
           Text = 'lblPAgo'
-          TabOrder = 6
+          TabOrder = 5
         end
       end
       object Rectangle1: TRectangle
@@ -845,6 +662,32 @@ object frmProdutos: TfrmProdutos
           TextSettings.HorzAlign = Center
           Text = '15/02/2023'
           TabOrder = 0
+        end
+      end
+      object Rectangle3: TRectangle
+        Align = MostBottom
+        Fill.Color = claCornflowerblue
+        Position.Y = 592.000000000000000000
+        Sides = []
+        Size.Width = 373.000000000000000000
+        Size.Height = 67.000000000000000000
+        Size.PlatformDefault = False
+        object Button2: TButton
+          Align = Center
+          StyledSettings = [Family, Size]
+          Margins.Top = 5.000000000000000000
+          Margins.Bottom = 5.000000000000000000
+          Size.Width = 151.000000000000000000
+          Size.Height = 39.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'cornerbuttonstyle'
+          TabOrder = 0
+          Text = 'Finalizar'
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.Trimming = None
+          TintColor = claGreenyellow
+          OnClick = Button2Click
         end
       end
     end
@@ -1139,7 +982,7 @@ object frmProdutos: TfrmProdutos
         TextSettings.FontColor = claWhite
         TextSettings.HorzAlign = Center
         TextSettings.VertAlign = Leading
-        Text = '1'
+        Text = '0'
         TabOrder = 0
       end
     end
@@ -1935,13 +1778,6 @@ object frmProdutos: TfrmProdutos
       end>
     Left = 160
     Top = 208
-  end
-  object Timer1: TTimer
-    Enabled = False
-    Interval = 100
-    OnTimer = Timer1Timer
-    Left = 240
-    Top = 217
   end
   object BindSourceDB1: TBindSourceDB
     ScopeMappings = <>

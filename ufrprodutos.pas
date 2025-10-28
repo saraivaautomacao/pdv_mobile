@@ -27,25 +27,7 @@ type
     lblQuant: TLabel;
     layTabProdutos: TLayout;
     lstVProdutos: TListView;
-    rectTabelaPreco: TRectangle;
-    lstbxTabPrecos: TListBox;
-    lstbxDescItem: TListBoxItem;
-    lstbxPreco1: TListBoxItem;
-    lstbxPreco2: TListBoxItem;
-    lstbxPreco3: TListBoxItem;
-    lstbxPreco4: TListBoxItem;
-    lstbxFinalizar: TListBoxItem;
-    rdbPreco1: TRadioButton;
-    rdbPreco2: TRadioButton;
-    rdbPreco3: TRadioButton;
-    rdbPreco4: TRadioButton;
-    lstbxObservacao: TListBoxItem;
-    edtObservacao: TEdit;
-    Button1: TButton;
-    SpeedButton1: TSpeedButton;
     lstvPedido: TListView;
-    Button2: TButton;
-    ToolBar1: TToolBar;
     rectObs: TRectangle;
     Button3: TButton;
     lblDescricao: TLabel;
@@ -75,7 +57,6 @@ type
     Image2: TImage;
     imgCarga: TImage;
     FloatAnimation3: TFloatAnimation;
-    Timer1: TTimer;
     recTotalReceber: TRectangle;
     Label1: TLabel;
     lblPAgo: TLabel;
@@ -85,6 +66,8 @@ type
     Rectangle2: TRectangle;
     Label6: TLabel;
     lblDataCaixa: TLabel;
+    Rectangle3: TRectangle;
+    Button2: TButton;
     procedure img_voltarClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure lstVProdutosButtonClick(const Sender: TObject;
@@ -101,7 +84,6 @@ type
     procedure imgCargaClick(Sender: TObject);
     procedure edtPrecoExit(Sender: TObject);
     procedure edtPrecoTyping(Sender: TObject);
-    procedure Timer1Timer(Sender: TObject);
     procedure Rectangle1Click(Sender: TObject);
   private
     { Private declarations }
@@ -118,6 +100,7 @@ type
     procedure AddCliente(produto, id_produto: string; preco: extended);
     procedure listaprodutos;
     function totalpago:extended;
+    procedure configuraInicial;
   public
     { Public declarations }
     numMesa:String;
@@ -218,7 +201,7 @@ begin
          dmlocal.qryFin.post;
          dmlocal.qryFin.next;
        end;
-
+        lblpago.text:='';
         tabPrincipal.ActiveTab:=tabPedido;
       finally
 
@@ -260,7 +243,7 @@ begin
                   memPedidoItem.AsInteger:=memPedido.RecordCount+1;
                   lblQuant.text:= IntToStr(lblQuant.text.ToInteger+1);
                   memPedidoTotal.AsCurrency:=memPedidovrunit.AsCurrency*memPedidoqtde.AsFloat;
-                  memPedidoobservacao.asString:=edtObservacao.text;
+                  //memPedidoobservacao.asString:=edtObservacao.text;
                   mempedido.post;
                end;
           end;
@@ -282,9 +265,9 @@ end;
 
 procedure TfrmProdutos.ThreadCargaTerminate(Sender: TObject);
 begin
-
+     TLoading.Hide;
    lstVProdutos.EndUpdate;
-   TLoading.Hide;
+
 
    controleCarga:=false;
    if Sender is TThread then
@@ -311,32 +294,8 @@ begin
             exit;
         end;
     end;
-
-end;
-
-procedure TfrmProdutos.Timer1Timer(Sender: TObject);
-begin
-    timer1.Enabled:=false;
-
-    dmLocal.memPedido.open;
-
-    lblQuant.text:=dmLocal.memPedido.RecordCount.ToString;
-   for var I := 0 to Lstvprodutos.Controls.Count-1 do
-    if Lstvprodutos.Controls[I] is TSearchBox then
-    begin
-      TSearchBox(Lstvprodutos.Controls[I]).Text := '';
-      break;
-    end;
-    listaProdutos;
-    dmlocal.qryfin.open;
-    while not dmlocal.qryfin.eof do
-    begin
-       dmlocal.qryFin.edit;
-       dmlocal.qryFinvalor.ascurrency:=0;
-       dmlocal.qryfin.post;
-       dmlocal.qryfin.next;
-    end;
-    dmlocal.qryfin.close;
+   // timer1.Enabled:=true;
+     configuraInicial;
 end;
 
 function TfrmProdutos.totalpago: extended;
@@ -363,16 +322,17 @@ begin
     if controlecarga Then
        exit;
     controlecarga:=true;
-    TLoading.Show(FrmProdutos, 'Atualizando...'); // Thread
+
     VAr query:=TFDQuery.Create(nil);
     query.Connection:=dmLocal.conLocal;
     Var memCarga:=TFDMemTable.Create(nil);
-
+    // FloatAnimation3.Start;
+    TLoading.Show(FrmProdutos, 'Atualizando...');
 
     t := TThread.CreateAnonymousThread(procedure
     begin
         try
-          // FloatAnimation3.Start;
+
             With dmLocal do
             begin
 
@@ -388,66 +348,66 @@ begin
               '(:codigo,:produto,:unidade,:lksetor,:precovenda)';
               TThread.Synchronize(TThread.CurrentThread, procedure
               begin
-               while not memCarga.Eof do
-               begin
-                    query.ParamByName('codigo').AsString:=memCarga.FieldByName('codigo').AsString;
-                    query.ParamByName('produto').AsString:=memCarga.FieldByName('produto').AsString;
-                    query.ParamByName('unidade').AsString:=memCarga.FieldByName('unidade').AsString;
-                    query.ParamByName('lksetor').AsInteger:=strtointdef(memCarga.FieldByName('lksetor').Asstring,0);
-                    query.ParamByName('precovenda').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda').AsString,0);
-                    query.ExecSQL;
-                    var item:TListViewItem:= lstvProdutos.Items.Add;
-                    with item do
-                    begin
-                        Height := 50;
-                        //Tag :=StrToInt64Def( id_produto,0);
-                        TagString :=memCarga.FieldByName('codigo').AsString;
-                        //TagFloat:=preco;
-                        // Cliente...
-                        TListItemText(Objects.FindDrawable('Text1')).Text := memCarga.FieldByName('produto').AsString;
-                        TListItemText(Objects.FindDrawable('Text2')).Text :=memCarga.FieldByName('codigo').AsString;
-                        TListItemText(Objects.FindDrawable('Text4')).Text := FloatToStrf(
-                        memCarga.FieldByName('precovenda').asExtended,
-                        ffnumber,12,2);
-                    end;
-                memCarga.Next;
-                 end;
+                 while not memCarga.Eof do
+                 begin
+                      query.ParamByName('codigo').AsString:=memCarga.FieldByName('codigo').AsString;
+                      query.ParamByName('produto').AsString:=memCarga.FieldByName('produto').AsString;
+                      query.ParamByName('unidade').AsString:=memCarga.FieldByName('unidade').AsString;
+                      query.ParamByName('lksetor').AsInteger:=strtointdef(memCarga.FieldByName('lksetor').Asstring,0);
+                      query.ParamByName('precovenda').AsCurrency:=StrtocurrDef(memCarga.FieldByName('precovenda').AsString,0);
+                      query.ExecSQL;
+                      var item:TListViewItem:= lstvProdutos.Items.Add;
+                      with item do
+                      begin
+                          Height := 50;
+                          //Tag :=StrToInt64Def( id_produto,0);
+                          TagString :=memCarga.FieldByName('codigo').AsString;
+                          //TagFloat:=preco;
+                          // Cliente...
+                          TListItemText(Objects.FindDrawable('Text1')).Text := memCarga.FieldByName('produto').AsString;
+                          TListItemText(Objects.FindDrawable('Text2')).Text :=memCarga.FieldByName('codigo').AsString;
+                          TListItemText(Objects.FindDrawable('Text4')).Text := FloatToStrf(
+                          memCarga.FieldByName('precovenda').asExtended,
+                          ffnumber,12,2);
+                      end;
+                  memCarga.Next;
+                   end;
 
 
-              memCarga.Close;
+                memCarga.Close;
 
-              memCarga.AppendData(TControllerDistribuidora.Carga('grupo',status));
-              memCarga.First;
-              query.SQL.Text:='delete from grupo';
-              query.ExecSQL;
-              query.SQL.Text:='Insert into grupo (controle,setor) values (:controle,:setor)';
-              while not memCarga.Eof do
-              begin
-                query.ParamByName('controle').AsInteger:=memCarga.FieldByName('controle').AsInteger;
-                query.ParamByName('setor').AsString:=memCarga.FieldByName('setor').AsString;
+                memCarga.AppendData(TControllerDistribuidora.Carga('grupo',status));
+                memCarga.First;
+                query.SQL.Text:='delete from grupo';
                 query.ExecSQL;
-                memCarga.Next;
-              end;
-              memCarga.Close;
-              //vendedores
+                query.SQL.Text:='Insert into grupo (controle,setor) values (:controle,:setor)';
+                while not memCarga.Eof do
+                begin
+                  query.ParamByName('controle').AsInteger:=memCarga.FieldByName('controle').AsInteger;
+                  query.ParamByName('setor').AsString:=memCarga.FieldByName('setor').AsString;
+                  query.ExecSQL;
+                  memCarga.Next;
+                end;
+                memCarga.Close;
+                //vendedores
 
-              query.SQL.Text:='delete from vendedor';
-              query.ExecSQL;
-              query.SQL.Text:='Insert into vendedor (codvend,cognome,senha)'+
-              ' values '+
-              '(:codvend,:cognome,:senha)';
-              memCarga.AppendData(TControllerDistribuidora.Carga('vendedor',status));
-              memCarga.First;
-              while not memCarga.Eof do
-              begin
-                query.ParamByName('codvend').AsInteger:=memCarga.FieldByName('codvend').AsInteger;
-                query.ParamByName('cognome').AsString:=uppercase(memCarga.FieldByName('cognome').AsString);
-                query.ParamByName('senha').AsString:=memCarga.FieldByName('senha').AsString;
+                query.SQL.Text:='delete from vendedor';
                 query.ExecSQL;
-                memCarga.Next;
-              end;
-              memCarga.Close;
-
+                query.SQL.Text:='Insert into vendedor (codvend,cognome,senha)'+
+                ' values '+
+                '(:codvend,:cognome,:senha)';
+                memCarga.AppendData(TControllerDistribuidora.Carga('vendedor',status));
+                memCarga.First;
+                while not memCarga.Eof do
+                begin
+                  query.ParamByName('codvend').AsInteger:=memCarga.FieldByName('codvend').AsInteger;
+                  query.ParamByName('cognome').AsString:=uppercase(memCarga.FieldByName('cognome').AsString);
+                  query.ParamByName('senha').AsString:=memCarga.FieldByName('senha').AsString;
+                  query.ExecSQL;
+                  memCarga.Next;
+                end;
+                memCarga.Close;
+             end);
               //clientes
               query.SQL.Text:='delete from cliente';
               query.ExecSQL;
@@ -483,7 +443,7 @@ begin
               end;
               memCarga.Close;
 
-              end);
+
 
              end;
 
@@ -589,10 +549,13 @@ end;
 
 procedure TfrmProdutos.FormShow(Sender: TObject);
 begin
-   id_produto:='';
+       lblPago.text:='';
+      tabPrincipal.ActiveTab:=tabPedido;
+
+        id_produto:='';
    Situacaocaixa:=caixaaberto;
    lblDataCaixa.text:='Fechado';
-   tabPrincipal.ActiveTab:=tabPedido;
+
    if   situacaocaixa='F' Then
    begin
         fancy.Show(TIconDialog.Info,'Aviso','Necessário abrir caixa retaguarda', 'OK');
@@ -603,24 +566,10 @@ begin
        fancy.Show(TIconDialog.Info,'Aviso','Servidor Inativo', 'OK');
        exit;
    end;
-    var status:integer;
-    lblDataCaixa.text:=TControllerdiSTRIBUIDORA.data_caixa(status);
-    if status=200 then
-   begin
-    var  JSONResponse:TjsonObject := TJSONObject.ParseJSONValue(lbldataCaixa.text) as TJSONObject;
 
-    lblDataCaixa.text:=(JSONResponse.GetValue('data').Value);
-    end;
-    lblQuant.text:='0';
-    lblCliente.Text:='Cliente Padrao';
-    controlecarga:=false;
-    rectTabelaPreco.Visible:=false;
-    recPeso.Visible:=false;
-    tabPrincipal.ActiveTab:=tabPedido;
-    fancy := TFancyDialog.Create(FrmProdutos);
-    rectObs1.Visible:=false;
-    timer1.Enabled:=true;
-    lblPago.text:='';
+    listaProdutos;
+
+
 end;
 
 procedure TfrmProdutos.Image1Click(Sender: TObject);
@@ -655,19 +604,65 @@ begin
 end;
 
 
+
+procedure TfrmProdutos.configuraInicial;
+begin
+
+
+    lblQuant.text:='0';
+    lblCliente.Text:='Cliente Padrao';
+    controlecarga:=false;
+
+    recPeso.Visible:=false;
+    tabPrincipal.ActiveTab:=tabPedido;
+    fancy := TFancyDialog.Create(FrmProdutos);
+    rectObs1.Visible:=false;
+
+    dmLocal.memPedido.open;
+
+    lblQuant.text:=dmLocal.memPedido.RecordCount.ToString;
+   for var I := 0 to Lstvprodutos.Controls.Count-1 do
+    if Lstvprodutos.Controls[I] is TSearchBox then
+    begin
+      TSearchBox(Lstvprodutos.Controls[I]).Text := '';
+      break;
+    end;
+
+    dmlocal.qryfin.open;
+    while not dmlocal.qryfin.eof do
+    begin
+       dmlocal.qryFin.edit;
+       dmlocal.qryFinvalor.ascurrency:=0;
+       dmlocal.qryfin.post;
+       dmlocal.qryfin.next;
+    end;
+    dmlocal.qryfin.close;
+   // timer1.Enabled:=true;
+end;
+
 procedure TfrmProdutos.listaprodutos;
 var
    T: TThread;
    qry:TFdQuery ;
 begin
     lstvProdutos.Items.Clear;
+     TLoading.Show(FrmProdutos, 'Carregando...'); // Thread
      lstvProdutos.BeginUpdate;
      qry :=TFDQuery.Create(nil);
      qry.Connection:=dmLocal.conLocal;
     qry.open('select * from produto order by produto');
-    TLoading.Show(FrmProdutos, 'Carregando...'); // Thread
+
+
     t := TThread.CreateAnonymousThread(procedure
     begin
+          var status:integer;
+          lblDataCaixa.text:=TControllerdiSTRIBUIDORA.data_caixa(status);
+          if status=200 then
+         begin
+          var  JSONResponse:TjsonObject := TJSONObject.ParseJSONValue(lbldataCaixa.text) as TJSONObject;
+
+          lblDataCaixa.text:=(JSONResponse.GetValue('data').Value);
+          end;
         TThread.Synchronize(TThread.CurrentThread, procedure
         begin
         while NOT qry.eof do
@@ -693,6 +688,7 @@ begin
      end);
     t.Start;
     t.OnTerminate := ThreadListaTerminate;
+
 end;
 
 procedure TfrmProdutos.lstVProdutosButtonClick(const Sender: TObject;
