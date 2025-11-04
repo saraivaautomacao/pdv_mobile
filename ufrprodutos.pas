@@ -559,11 +559,15 @@ begin
    if   situacaocaixa='F' Then
    begin
         fancy.Show(TIconDialog.Info,'Aviso','Necessário abrir caixa retaguarda', 'OK');
+        rectHeader.Enabled:=false;
+        lstVProdutos.Enabled:=false;
         exit;
    end
    Else if situacaocaixa='I' Then   //sem contato com o servidor
    begin
        fancy.Show(TIconDialog.Info,'Aviso','Servidor Inativo', 'OK');
+       rectHeader.Enabled:=false;
+         lstVProdutos.Enabled:=false;
        exit;
    end;
 

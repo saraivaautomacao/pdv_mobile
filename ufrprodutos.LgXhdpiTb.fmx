@@ -5,14 +5,12 @@ inherited frmProdutos_LgXhdpiTb: TfrmProdutos_LgXhdpiTb
   inherited tabPrincipal: TTabControl
     Size.Width = 480.000000000000000000
     Size.Height = 780.000000000000000000
-    TabIndex = 0
     Sizes = (
       480s
       780s
       480s
       780s)
     inherited tabPedido: TTabItem
-      IsSelected = True
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited lstVProdutos: TListView
@@ -86,7 +84,6 @@ inherited frmProdutos_LgXhdpiTb: TfrmProdutos_LgXhdpiTb
       end
     end
     inherited tabFinalizar: TTabItem
-      IsSelected = False
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited lstvPedido: TListView

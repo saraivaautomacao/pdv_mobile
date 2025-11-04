@@ -147,7 +147,7 @@ begin
          end;
          udmLocal.CodigoVEndedor:=tmpDAtaset.FieldByName('codvend').AsString;
     end;
-    var  NS: TNetworkState:=TNetworkState.create;
+  {  var  NS: TNetworkState:=TNetworkState.create;
     try
       if not  NS.IsWifiConnected then
       begin
@@ -156,7 +156,7 @@ begin
       end;
     finally
       ns.disposeof;
-    end;
+    end;  }
 
 
 
